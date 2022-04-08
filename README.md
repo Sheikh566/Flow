@@ -1,2 +1,2 @@
 # Flow
-A music streaming stite
+A music streaming site
