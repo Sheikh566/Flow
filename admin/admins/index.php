@@ -1,59 +1,106 @@
-<?php 
-  include $_SERVER['DOCUMENT_ROOT'].'/flow/helpers/database.php';
-  
-  $db = new Database();
-  $db->select('admins', '*');
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/flow/helpers/database.php';
+
+$db = new Database();
+$db->select('admins', '*');
+
+$admins = $db->res;
+
+if (isset($_GET['m'])) {
+    $id = $_GET['id'];
+    $db->delete('admins', "admin_id = $id");
+    if ($db->res) {
+        header('location:./');
+    }
+}
 ?>
 
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+
 <head>
-    <?php include $_SERVER['DOCUMENT_ROOT'].'/flow/admin/components/headtag.php' ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/flow/admin/components/headtag.php' ?>
 </head>
+
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'].'/flow/admin/components/navbar.php' ?>
-    <?php include $_SERVER['DOCUMENT_ROOT'].'/flow/admin/components/sidebar.php' ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/flow/admin/components/navbar.php' ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/flow/admin/components/sidebar.php' ?>
+
+    <!-- Button trigger modal -->
+
+
 
     <div class="page-wrapper">
-      <?php include $_SERVER['DOCUMENT_ROOT'].'/flow/admin/components/breadcrumb.php' ?>
-      <div class="container-fluid py-0">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body p-0">
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/flow/admin/components/breadcrumb.php' ?>
+        <div class="container-fluid py-0">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body p-0">
                             <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Email</th>
-                                                <th scope="col">Password</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                          <?php 
-                                            while ($row = mysqli_fetch_assoc($db->res)) {
-                                          ?>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Password</th>
+                                            <th scope="col">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        while ($row = mysqli_fetch_assoc($admins)) {
+                                        ?>
                                             <tr>
                                                 <th scope="row"><?php echo $row['admin_id'] ?></th>
                                                 <td><?php echo $row['admin_name'] ?></td>
                                                 <td><?php echo $row['admin_email'] ?></td>
                                                 <td><?php echo $row['admin_password'] ?></td>
+                                                <td>
+                                                    <a href="./edit.php?id=<?php echo $row['admin_id'] ?>" class="text-info"><i class="mdi mdi-pencil"></i>Edit</a> |
+                                                    <i class="mdi mdi-delete text-danger fst-normal" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $row['admin_id']?>">Delete</i>        
+                                                </td>
                                             </tr>
-                                          <?php } ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="exampleModal<?php echo $row['admin_id']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Deleting admin "<?php echo $row['admin_name'] ?>"</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Are you sure you want to delete?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-danger" id="deleleBtn">
+                                                                <a href="./?m=delete&id=<?php echo $row['admin_id'] ?>" class="text-light">Delete</a>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
-    
+    </div>
+
     <!-- footer and scripts-->
-    <?php include $_SERVER['DOCUMENT_ROOT'].'/flow/admin/components/footer.php' ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/flow/admin/components/footer.php' ?>
+    <script>
+        $('#deleteBtn').click(function() {
+            $(this).children('a').click();
+        })
+    </script>
 </body>
+
 </html>

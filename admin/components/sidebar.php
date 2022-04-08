@@ -92,5 +92,6 @@
     if (breadcrumb === 'Dashboard') {
         $('#add-new-btn').hide();
     }
+
   })
 </script>
