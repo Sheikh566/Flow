@@ -34,5 +34,8 @@
       $query = "DELETE FROM $table WHERE $conds";
       $this->res = mysqli_query($this->conn, $query);
     }
+
+ 
+
   }
 ?>

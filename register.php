@@ -1,3 +1,23 @@
+<?php
+     include 'helpers/dbfunction.php';
+
+     $funObj = new dbfunction(); 
+
+     if(isset($_POST['btn-register'])){
+        $username = $_POST['username'];  
+        $email = $_POST['email'];  
+        $password = $_POST['pass'];
+        
+        $res = $funObj->registration($username,$email,$password);
+        if($res){
+            echo "<script>alert('Registration Successful')</script>";  
+        }else{
+            echo "<script>alert('Registration Not Successful')</script>";
+        }
+     }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,19 +53,19 @@
                             <form action="#" method="post">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Name</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <input type="text" class="form-control"   name="username">
                                     <!-- <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small> -->
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <input type="email" class="form-control"  name="email">
                                     <!-- <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small> -->
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                    <input type="password" class="form-control" name="pass">
                                 </div>
-                                <button type="submit" class="oneMusic-btn mt-30">Sign up</button>
+                                <button type="submit" class="oneMusic-btn mt-30" name="btn-register">Sign up</button>
                                 <div class="mt-2">
                                     <p> Already have an account? <a href="login.php">Login</a>.</p>
                                 </div>

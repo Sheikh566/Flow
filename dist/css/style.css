@@ -365,11 +365,12 @@ img {
 
     .header-area .oneMusic-main-menu .classy-navbar {
       background-color: transparent;
-      height: 85px;
-      padding: 0; }
+      height: 85px; }
       @media only screen and (max-width: 767px) {
         .header-area .oneMusic-main-menu .classy-navbar {
-          height: 70px; }
+          height: 70px;
+          padding: 0px;
+        }
           
         }
       .header-area .oneMusic-main-menu .classy-navbar .classynav ul li a {
