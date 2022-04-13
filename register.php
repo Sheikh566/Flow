@@ -1,22 +1,42 @@
 <?php
-     include 'helpers/dbfunction.php';
+    include 'helpers/database.php';
+    $db = new Database();
 
-     $funObj = new dbfunction(); 
+    if($db->conn){
+              if(isset($_POST['btn-register'])){
 
-     if(isset($_POST['btn-register'])){
-        $username = $_POST['username'];  
-        $email = $_POST['email'];  
-        $password = $_POST['pass'];
-        
-        $res = $funObj->registration($username,$email,$password);
-        if($res){
-            echo "<script>alert('Registration Successful')</script>";  
-        }else{
-            echo "<script>alert('Registration Not Successful')</script>";
-        }
-     }
+                $data =[
+                    'name' => mysqli_real_escape_string($db->conn,$_POST['u_name']),
+                    'email' => mysqli_real_escape_string($db->conn,$_POST['u_email']),
+                    'pass' => mysqli_real_escape_string($db->conn,$_POST['u_pass']),
+                    'confirm_pass' => mysqli_real_escape_string($db->conn,$_POST['c_pass']),
+
+                     'name_error' => '',
+                     'email_error' => '',
+                     'password_error' => '',
+                     'confirm_error' => '',
+  
+                ];
+                 
+                  /////Name validate/////
+                  if(empty($data['name'])){
+                      $data['name_error'] = "Name is required";
+                  }elseif(!preg_match("/^[a-zA-Z ]+$/",$data['name_error'])){
+                      $data['name_error'] = "Name must contain only alphabets and space";
+                  }
+               
+                  ////email validate////
+
+
+                  ////////Password validate/////////
+
+                           
+              }
+            }else{
+                echo "Connection Failed";
+            }
+
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,20 +70,32 @@
                         <h3>New here!!</h3>
                         <!-- Login Form -->
                         <div class="login-form">
-                            <form action="#" method="post">
+                            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Name</label>
-                                    <input type="text" class="form-control"   name="username">
+                                    <label for="exampleInputText1">Name</label>
+                                    <input type="text" class="form-control" name="u_name" value="<?php if(!empty($data['name'])): echo $data['name'];  endif;?>" 
+                                        maxlength="50">
+                                    <span class="text-danger">
+                                      <?php if(!empty($data['name_error'])):  ?>
+                                        <?php echo $data['name_error'] ?>
+                                      <?php endif;?>
+                                    </span>
                                     <!-- <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small> -->
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control"  name="email">
-                                    <!-- <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small> -->
+                                    <input type="email" class="form-control"  name="u_email">
+                                    <span class="text-danger"><?php if (isset($email_error)) echo $email_error; ?></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" name="pass">
+                                    <input type="password" class="form-control" name="u_pass">
+                                    <span class="text-danger"><?php if (isset($password_error)) echo $password_error; ?></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Comfirm Password</label>
+                                    <input type="password" class="form-control" name="c_pass">
                                 </div>
                                 <button type="submit" class="oneMusic-btn mt-30" name="btn-register">Sign up</button>
                                 <div class="mt-2">
