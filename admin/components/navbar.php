@@ -19,14 +19,14 @@
           <!-- ============================================================== -->
           <!-- Logo -->
           <!-- ============================================================== -->
-        <a class="navbar-brand" href="http://<?php echo $_SERVER['SERVER_NAME']?>/flow/admin/index.php">
+        <a class="navbar-brand" href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/admin/index.php">
             <!-- Logo icon -->
             <b class="logo-icon">
                 <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                 <!-- Dark Logo icon -->
-                <img src="http://<?php echo $_SERVER['SERVER_NAME']?>/flow/dist/img/core-img/flow-dark.png" width="100px" alt="homepage" class="dark-logo" />
+                <img src="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/img/core-img/flow-dark.png" width="100px" alt="homepage" class="dark-logo" />
                 <!-- Light Logo icon -->
-                <img src="http://<?php echo $_SERVER['SERVER_NAME']?>/flow/admin/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                <img src="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/admin/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
             </b>
             <!--End Logo icon -->
             <!-- Logo text -->

@@ -44,13 +44,8 @@ if (isset($_GET['m'])) {
                                 <div class="m-t-30">
                                     <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['artist_photo']); ?>" class="rounded-circle" width="150px">
                                     <h4 class="card-title m-t-10"><?php echo $row['artist_name'] ?></h4>
-    
-                                    
+
                                 </div>
-                                <div>
-                                        <span>Release: <span class="badge rounded-pill bg-success fs-6">2021</span></span><br>
-                                        <span class="badge rounded-pill bg-dark my-2 fs-6">Chahat Fateh Ali Khan</span>
-                                    </div>
                             </div>
                         </div>
                     </div>
