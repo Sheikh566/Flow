@@ -56,8 +56,6 @@
                                 <div class="login-register-btn mr-50">
                                     <a href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/login.php" id="loginBtn">Login / Signup</a>
                                 </div>
-
-                               
                             </div>
                         </div>
                         <!-- Nav End -->

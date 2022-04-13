@@ -54,19 +54,18 @@
                     </a>
                 </li>
 
-
-                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                        href="./html/pages-profile.html" aria-expanded="false"><i
+                <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="./templates/pages-profile.html" aria-expanded="false"><i
                             class="mdi mdi-account-network"></i><span class="hide-menu">Profile</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                        href="./html/table-basic.html" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
+                        href="./templates/table-basic.html" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
                             class="hide-menu">Table</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                        href="./html/icon-material.html" aria-expanded="false"><i class="mdi mdi-face"></i><span
+                        href="./templates/icon-material.html" aria-expanded="false"><i class="mdi mdi-face"></i><span
                             class="hide-menu">Icon</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                        href="./html/starter-kit.html" aria-expanded="false"><i class="mdi mdi-file"></i><span
-                            class="hide-menu">Blank</span></a></li>
+                        href="./templates/starter-kit.html" aria-expanded="false"><i class="mdi mdi-file"></i><span
+                            class="hide-menu">Blank</span></a></li> -->
             </ul>
         </nav>
         <!-- End Sidebar navigation -->
@@ -89,7 +88,7 @@
       $('#sidebarnav li').removeClass('selected');
     })
     
-    if (breadcrumb === 'Dashboard') {
+    if (breadcrumb === 'Dashboard' || breadcrumb === 'Reviews') {
         $('#add-new-btn').hide();
     }
 

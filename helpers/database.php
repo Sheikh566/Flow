@@ -33,7 +33,6 @@
     {
       $args = urldecode(http_build_query($val, '', ','));
       $query = "UPDATE $table SET $args WHERE $conds";
-      Helper::alert($query);
       $this->res = mysqli_query($this->conn, $query);
     }
     public function delete($table, $conds)
