@@ -16,6 +16,13 @@
       if ($conds!= "") $query.= $where_clause;
       $this->res = mysqli_query($this->conn, $query);
     }
+    public function selectJoin($table1, $table2, $cols, $on, $conds="") 
+    {
+      $query = "SELECT $cols FROM $table1 JOIN $table2 ON $on";
+      $where_clause = " WHERE $conds";
+      if ($conds!= "") $query.= $where_clause;
+      $this->res = mysqli_query($this->conn, $query);
+    }
     public function insert($table, $cols=array()) {
       $table_col = implode(",", array_keys($cols));
       $table_val = implode("','", array_values($cols));

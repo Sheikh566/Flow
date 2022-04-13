@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex,nofollow">
 <title>Flow Admin</title>
 <!-- Favicon icon -->
-<link rel="icon" type="image/png" sizes="16x16" href="http://<?php echo $_SERVER['SERVER_NAME']?>/flow/admin/assets/images/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="http://<?php echo $_SERVER['SERVER_NAME']?>/flow/dist/img/core-img/favicon.ico">
 <!-- Custom CSS -->
 <link href="http://<?php echo $_SERVER['SERVER_NAME']?>/flow/admin/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
 <link href="http://<?php echo $_SERVER['SERVER_NAME']?>/flow/admin/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" rel="stylesheet">

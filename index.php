@@ -16,14 +16,14 @@
             <!-- Single Hero Slide -->
             <div class="single-hero-slide d-flex align-items-center justify-content-center">
                 <!-- Slide Img -->
-                <div class="slide-img bg-img" style="background-image: url(dist/img/bg-img/bg-1.jpg);"></div>
+                <div class="slide-img bg-img" style="background-image: url(dist/img/bg-img/young-stunners.jpg);"></div>
                 <!-- Slide Content -->
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <div class="hero-slides-content text-center">
-                                <h6 data-animation="fadeInUp" data-delay="100ms">Latest album</h6>
-                                <h2 data-animation="fadeInUp" data-delay="300ms">Beyond Time <span>Beyond Time</span>
+                                <h6 data-animation="fadeInUp" data-delay="100ms">Latest Release</h6>
+                                <h2 data-animation="fadeInUp" data-delay="300ms">PHIR MILENGE <span>PHIR MILENGE</span>
                                 </h2>
                                 <a data-animation="fadeInUp" data-delay="500ms" href="#"
                                     class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
@@ -36,15 +36,33 @@
             <!-- Single Hero Slide -->
             <div class="single-hero-slide d-flex align-items-center justify-content-center">
                 <!-- Slide Img -->
-                <div class="slide-img bg-img" style="background-image: url(dist/img/bg-img/bg-2.jpg);"></div>
+                <div class="slide-img bg-img" style="background-image: url(dist/img/bg-img/travis-1.jpg);"></div>
+                <!-- Slide Content -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="hero-slides-content text-center">
+                                <h6 data-animation="fadeInUp" data-delay="100ms">Upcomming album</h6>
+                                <h2 data-animation="fadeInUp" data-delay="300ms">UTOPIA<span>UTOPIA</span></h2>
+                                <a data-animation="fadeInUp" data-delay="500ms" href="#"
+                                    class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide d-flex align-items-center justify-content-center">
+                <!-- Slide Img -->
+                <div class="slide-img bg-img" style="background-image: url(dist/img/bg-img/billie.webp);"></div>
                 <!-- Slide Content -->
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <div class="hero-slides-content text-center">
                                 <h6 data-animation="fadeInUp" data-delay="100ms">Latest album</h6>
-                                <h2 data-animation="fadeInUp" data-delay="300ms">Colorlib Music <span>Colorlib
-                                        Music</span></h2>
+                                <h2 data-animation="fadeInUp" data-delay="300ms">HAPPIER THAN EVER<span>HAPPIER THAN EVER</span></h2>
                                 <a data-animation="fadeInUp" data-delay="500ms" href="#"
                                     class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
                             </div>
@@ -418,10 +436,10 @@
                             in velit non elit pulvinar pellentesque et non eros.</p>
                         <div class="song-play-area" data-aos="fade-bottom">
                             <div class="song-name">
-                                <p>01. Main Hit Song</p>
+                                <p>01. Cheez Badi</p>
                             </div>
                             <audio preload="auto" controls>
-                                <source src="audio/dummy-audio.mp3">
+                                <source src="./dist/audio/cheez-badi-hai.mp3">
                             </audio>
                         </div>
                     </div>
