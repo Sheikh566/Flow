@@ -44,7 +44,7 @@
                                 </div>
                                
                                 <div class="mt-2">
-                                <p>Not have an account? <a href="register.php">Register</a>.</p>
+                                <p>Not have an account? <a href="signup.php">Sign up</a>.</p>
                                 </div>
                             </form>
                         </div>

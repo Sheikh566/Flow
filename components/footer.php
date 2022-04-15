@@ -5,9 +5,8 @@
                 <div class="col-12 col-md-6">
                     <img src="img/core-img/logo.png" alt="">
                     <p class="copywrite-text text-center">
-                        Copyright &copy; All rights reserved | Made with
-                        <i class="fa fa-heart-o" aria-hidden="true"></i>
-                        in KHI
+                    All Rights Reserved by Flow &trade;. Designed and Developed by 
+                 <a href="https://github.com/Hamzakhan09">Hamza Khan</a>
                     </p>
                 </div>
 

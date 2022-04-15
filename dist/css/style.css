@@ -660,7 +660,9 @@ img {
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms; }
   .single-event-area img {
-    width: 100%; }
+    width: 100%;
+     height: 225px !important;
+  }
   .single-event-area .event-text {
     text-align: center;
     position: relative;

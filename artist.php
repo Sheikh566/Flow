@@ -1,3 +1,9 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/flow/helpers/database.php';
+$db = new Database();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,22 +31,27 @@
         <div class="container">
             <div class="row">
 
+              <?php
+                   $db->select('artists','*');
+                      while($row=mysqli_fetch_assoc($db->res)){
+
+              ?>
                 <!-- Single Event Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-event-area mb-30">
                         <div class="event-thumbnail">
-                            <img src="img/bg-img/e1.jpg" alt="">
+                            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['artist_photo']); ?>" alt="artists_photos" style="height: 225px;">
                         </div>
                         <div class="event-text">
-                            <h4>Dj Night Party</h4>
-                            <div class="event-meta-data">
-                                <a href="#" class="event-place">VIP Sala</a>
-                                <a href="#" class="event-date">June 15, 2018</a>
-                            </div>
-                            <a href="#" class="btn see-more-btn">See Event</a>
+                            <h4><?php echo $row["artist_name"]; ?></h4>
+                            <a href="#" class="btn see-more-btn">See More</a>
                         </div>
                     </div>
                 </div>
+
+                <?php
+                      }
+                ?>
 
 
             </div>
