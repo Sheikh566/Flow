@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
                   <input type="number" min="1900" max="<?php echo date("Y")+1; ?>" class="form-control" name="year" aria-describedby="Name" required>
                 </div>
                 <div class="mb-3">
-                  <label for="photo" class="form-label">Thumbnail</label>
+                  <label for="thumbnail" class="form-label">Thumbnail</label>
                   <input type="file" class="form-control" name="thumbnail" aria-describedby="Photo">
                 </div>
                 <button type="submit" class="btn btn-primary" name="submit">Submit</button>

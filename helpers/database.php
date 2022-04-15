@@ -27,6 +27,7 @@
       $table_col = implode(",", array_keys($cols));
       $table_val = implode("','", array_values($cols));
       $query = "INSERT INTO $table($table_col) VALUES ('$table_val')";
+      $query = str_replace("'None'","NULL",$query);
       $this->res = mysqli_query($this->conn, $query);
     }
     public function update($table, $val=array(), $conds = "")
