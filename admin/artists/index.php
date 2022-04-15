@@ -35,14 +35,14 @@ if (isset($_GET['m'])) {
                             <div class="card-header py-0 px-2 d-flex justify-content-between">
                                 <div>ArtistID: <?php echo $row['artist_id'] ?></div>
                                 <div>
-                                    <a href="./edit.php?id=<?php echo $row['artist_id'] ?>"><i class="mdi mdi-pencil text-info"></i></a> |
+                                    <a class="m-2" href="./edit.php?id=<?php echo $row['artist_id'] ?>"><i class="mdi mdi-pencil text-info"></i></a> |
                                     <i class="mdi mdi-delete text-danger" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $row['artist_id'] ?>"></i>
                                 </div>
 
                             </div>
                             <div class="card-body py-0">
                                 <div class="m-t-30">
-                                    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['artist_photo']); ?>" class="rounded-circle" width="150px">
+                                    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['artist_photo']); ?>" class="rounded-circle" width="150px" height="150px">
                                     <h4 class="card-title m-t-10"><?php echo $row['artist_name'] ?></h4>
 
                                 </div>
