@@ -24,26 +24,26 @@
                         <i class="mdi mdi-account-settings-variant"></i>
                         <span class="hide-menu">Admins</span>
                     </a>
-                </li>
+                </li>   
                 <li class="sidebar-item" id="sidebar-item-3"> 
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                        href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/admin/music" aria-expanded="false">
-                        <i class="mdi mdi-music-note"></i>
-                        <span class="hide-menu">Music</span>
-                    </a>
-                </li>
-                <li class="sidebar-item" id="sidebar-item-4"> 
                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                         href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/admin/artists" aria-expanded="false">
                         <i class="mdi mdi-account-star-variant"></i>
                         <span class="hide-menu">Artists</span>
                     </a>
                 </li>
-                <li class="sidebar-item" id="sidebar-item-5"> 
+                <li class="sidebar-item" id="sidebar-item-4"> 
                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                         href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/admin/albums" aria-expanded="false">
                         <i class="mdi mdi-album"></i>
                         <span class="hide-menu">Albums</span>
+                    </a>
+                </li>
+                <li class="sidebar-item" id="sidebar-item-5"> 
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/admin/music" aria-expanded="false">
+                        <i class="mdi mdi-music-note"></i>
+                        <span class="hide-menu">Music</span>
                     </a>
                 </li>
                 <li class="sidebar-item" id="sidebar-item-6"> 

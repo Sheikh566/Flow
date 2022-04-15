@@ -2,9 +2,9 @@
 include $_SERVER['DOCUMENT_ROOT'] . '/flow/helpers/database.php';
 $db = new Database();
 
+// dropdown options fetch
 $db->select('albums', "album_id, album_title");
 $album_options = $db->res;
-
 $db->select('artists', "artist_id, artist_name");
 $artist_options = $db->res;
 

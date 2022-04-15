@@ -4,6 +4,14 @@
   $db = new Database();
   $db->selectJoin('music', 'artists', "music.*, artists.artist_name", "music.music_artist = artists.artist_id");
   $music = $db->res;
+
+  // deletes both, the database record and the file in upload DIR
+  if (isset($_GET['m'])) {
+    $id = $_GET['id'];
+    $db->delete('music', "music_id = $id");
+    unlink($_SERVER['DOCUMENT_ROOT'].'/flow'.$_GET['path']);
+    if ($db->res) header('location:./');
+}
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +50,7 @@
                                         <?php
                                         while ($row = mysqli_fetch_assoc($music)) {
                                         ?>
-                                            <tr>
+                                            <tr class="align-middle">
                                                 <th scope="row"><?php echo $row['music_id'] ?></th>
                                                 <td><?php echo $row['music_title'] ?></td>
                                                 <td><?php echo $row['artist_name'] ?></td>
@@ -50,8 +58,8 @@
                                                 <td><?php echo $row['music_year'] ?></td>
                                                 <td><?php echo $row['music_language'] ?></td>
                                                 <td><?php echo $row['music_format'] ?></td>
-                                                <td><?php echo $row['music_path'] ?></td>
-                                                <td><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['music_thumbnail']); ?>" class="rounded-circle" width="150px"></td>
+                                                <td width="350px"><?php echo $row['music_path'] ?></td>
+                                                <td><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['music_thumbnail']); ?>" class="rounded-circle" style="object-fit: cover" width="140px" height="130px"></td>
                                                 <td>
                                                     <a href="./edit.php?id=<?php echo $row['music_id'] ?>" class="text-info"><i class="mdi mdi-pencil"></i>Edit</a> |
                                                     <i class="mdi mdi-delete text-danger fst-normal" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $row['music_id']?>">Delete</i>        
@@ -71,7 +79,7 @@
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                                             <button type="button" class="btn btn-danger" id="deleleBtn">
-                                                                <a href="./?m=delete&id=<?php echo $row['admin_id'] ?>" class="text-light">Delete</a>
+                                                                <a href="./?m=delete&id=<?php echo $row['music_id'] ?>&path=<?php echo $row['music_path']?>" class="text-light">Delete</a>
                                                             </button>
                                                         </div>
                                                     </div>

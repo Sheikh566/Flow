@@ -9,9 +9,7 @@ $albums = $db->res;
 if (isset($_GET['m'])) {
     $id = $_GET['id'];
     $db->delete('albums', "album_id = $id");
-    if ($db->res) {
-        header('location:./');
-    }
+    if ($db->res) header('location:./');
 }
 ?>
 
@@ -43,7 +41,7 @@ if (isset($_GET['m'])) {
                             </div>
                             <div class="card-body py-0">
                                 <div class="m-t-30">
-                                    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['album_thumbnail']); ?>" class="rounded-circle" width="150px">
+                                    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['album_thumbnail']); ?>" class="rounded-circle" style="object-fit: cover" width="150px">
                                     <h4 class="card-title m-t-10"><?php echo $row['album_title'] ?></h4>
                                 </div>
                                 <div class="d-flex flex-column">
