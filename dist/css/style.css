@@ -1152,7 +1152,9 @@ img {
     padding: 0 20px;
     border-radius: 0; }
     .login-content .form-control:focus {
-      box-shadow: none; }
+      box-shadow: none;
+      border-color: #000000 !important;
+    }
 
       input[type="email"]:focus,
       input[type="password"]:focus{
@@ -1518,7 +1520,10 @@ img {
     color: #fff;
     border-bottom: 1px solid #fff; }
     .has-bg-img .contact-form-area .form-control:focus {
-      border-bottom: 1px solid #fff; }
+      border-bottom: 1px solid #fff;
+      background-color: transparent !important;
+       
+    }
   .has-bg-img .oneMusic-btn {
     background-color: transparent;
     border-color: #fff;

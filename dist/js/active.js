@@ -120,21 +120,21 @@
     }
 
     // :: 5.0 Video Active Code
-    if ($.fn.magnificPopup) {
-        $('.video--play--btn').magnificPopup({
-            disableOn: 0,
-            type: 'iframe',
-            mainClass: 'mfp-fade',
-            removalDelay: 160,
-            preloader: true,
-            fixedContentPos: false
-        });
-    }
+    // if ($.fn.magnificPopup) {
+    //     $('.video--play--btn').magnificPopup({
+    //         disableOn: 0,
+    //         type: 'iframe',
+    //         mainClass: 'mfp-fade',
+    //         removalDelay: 160,
+    //         preloader: true,
+    //         fixedContentPos: false
+    //     });
+    // }
 
     // :: 6.0 ScrollUp Active Code
     if ($.fn.scrollUp) {
         browserWindow.scrollUp({
-            scrollSpeed: 1500,
+            scrollSpeed: 150,
             scrollText: '<i class="fa fa-angle-up"></i>'
         });
     }

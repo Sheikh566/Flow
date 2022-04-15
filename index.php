@@ -25,7 +25,7 @@
                                 <h6 data-animation="fadeInUp" data-delay="100ms">Latest Release</h6>
                                 <h2 data-animation="fadeInUp" data-delay="300ms">PHIR MILENGE <span>PHIR MILENGE</span>
                                 </h2>
-                                <a data-animation="fadeInUp" data-delay="500ms" href="#"
+                                <a data-animation="fadeInUp" data-delay="500ms" href="music/audio.php"
                                     class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                             <div class="hero-slides-content text-center">
                                 <h6 data-animation="fadeInUp" data-delay="100ms">Upcomming album</h6>
                                 <h2 data-animation="fadeInUp" data-delay="300ms">UTOPIA<span>UTOPIA</span></h2>
-                                <a data-animation="fadeInUp" data-delay="500ms" href="#"
+                                <a data-animation="fadeInUp" data-delay="500ms" href="albums.php"
                                     class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                             <div class="hero-slides-content text-center">
                                 <h6 data-animation="fadeInUp" data-delay="100ms">Latest album</h6>
                                 <h2 data-animation="fadeInUp" data-delay="300ms">HAPPIER THAN EVER<span>HAPPIER THAN EVER</span></h2>
-                                <a data-animation="fadeInUp" data-delay="500ms" href="#"
+                                <a data-animation="fadeInUp" data-delay="500ms" href="albums.php"
                                     class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
                             </div>
                         </div>
