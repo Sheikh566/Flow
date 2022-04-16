@@ -25,5 +25,6 @@
     <link rel="stylesheet" href="dist/css/one-music-icon.css">
     <link rel="stylesheet" href="dist/css/owl.carousel.min.css">
     <link rel="stylesheet" href="dist/css/aos.css">
+    <!-- ##### All Javascript Script ##### -->
 
 </head>

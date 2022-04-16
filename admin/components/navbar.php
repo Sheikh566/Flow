@@ -1,3 +1,9 @@
+<?php 
+if (session_status() === PHP_SESSION_NONE) {
+session_start();
+}
+?>
+
 <!-- ============================================================== -->
 <!-- Preloader - style you can find in spinners.css -->
 <!-- ============================================================== -->
@@ -59,10 +65,10 @@
             <!-- User profile and search -->
             <!-- ============================================================== -->
             <li class="nav-item d-flex align-items-center mx-3 fs-4">
-                Welcome, Sheikh Abdullah
+                Welcome, <?php echo $_SESSION['admin'] ?>
             </li>
             <li class="nav-item d-flex align-items-center mx-3 fs-4">
-               <a href="#"><b>Logout</b></a>
+               <a href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/helpers/logout.php"><b>Logout</b></a>
             </li>
         </ul>
     </div>

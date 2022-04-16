@@ -1,3 +1,22 @@
+<?php 
+  if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+  }
+include $_SERVER['DOCUMENT_ROOT'] . '/flow/helpers/database.php';
+
+$db = new Database();
+if (isset($_POST['submit'])) {
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  $db->insert('users', ['user_name' => $name, 'user_email' => $email, 'user_password' => $password]);
+  if ($db->res) {
+    $_SESSION['user'] = $name; 
+    header('location:./index.php');
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +24,13 @@
     <?php
     include 'components/file.php';
     ?>
+    <style>
+        .disabled { opacity: 0.3 }
+        .disabled:hover {
+            background-color: transparent;
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,31 +53,32 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-8">
                     <div class="login-content">
-                        <h3>New here!!</h3>
                         <!-- Login Form -->
                         <div class="login-form">
                             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                                 <div class="form-group">
-                                    <label for="exampleInputText1">Name</label>
-                                    <input type="text" class="form-control" name="u_name" maxlength="50">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" name="name" maxlength="50">
                                     <!-- <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small> -->
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" name="u_email">
+                                    <label for="email">Email address</label>
+                                    <input type="email" class="form-control" name="email" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" name="u_pass">
+                                    <label for="password">Password</label>
+                                    <input id="pass1" type="password" class="form-control" name="password">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Comfirm Password</label>
-                                    <input type="password" class="form-control" name="c_pass">
+                                    <label for="passwordConfirm">Confirm Password</label>
+                                    <input id="pass2" type="password" class="form-control" name="passwordConfirm">
+                                    <span id="passMessage" class="fs-6 text-danger" hidden>Password don't match</span>
                                 </div>
-                                <button type="submit" class="oneMusic-btn mt-30" name="btn-register">Sign up</button>
+                                 
+                                <button id="submit" type="submit" class="oneMusic-btn mt-30 disabled" name="submit" disabled>Sign up</button>
                                 <div class="mt-2">
-                                    <p> Already have an account? <a href="login.php">Login</a>.</p>
+                                    <p> Already have an account? <a href="login.php">Login</a></p>
                                 </div>
                             </form>
                         </div>
@@ -66,7 +93,17 @@
     include 'components/footer.php';
     include 'components/scripts_file.php';
     ?>
-
+    <script>
+        $(document).ready(function() {
+            $("#pass2").change(function() {
+                $("#submit").addClass('disabled');
+                let passMatch = $("#pass1").val() === $("#pass2").val();
+                $("#passMessage").prop('hidden', passMatch);
+                $("#submit").prop('disabled', !passMatch);
+                if (passMatch) $("#submit").removeClass('disabled');
+            })
+        })
+    </script>
 </body>
 
 </html>
