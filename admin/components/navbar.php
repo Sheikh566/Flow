@@ -2,6 +2,9 @@
 if (session_status() === PHP_SESSION_NONE) {
 session_start();
 }
+if (!isset($_SESSION['admin'])) {
+    header("location:http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']."/flow");
+}
 ?>
 
 <!-- ============================================================== -->

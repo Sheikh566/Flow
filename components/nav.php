@@ -2,6 +2,7 @@
   if (session_status() === PHP_SESSION_NONE) {
     session_start();
   }
+
 ?>
 
 <!-- Preloader -->
@@ -47,9 +48,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/artist.php">Artist</a></li>
-                                <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/contact.php">About us</a></li>
-                                <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/contact.php">Contact</a></li>
-
+                                <!-- <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/contact.php">About us</a></li> -->
                             </ul>
 
                             <!-- Login/Register & Cart Button -->
@@ -57,7 +56,14 @@
                                 <!-- Login/Register -->
 
                                 <div class="login-register-btn mr-50">
-                                    <a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/login.php" id="loginBtn">Login / Signup</a>
+                                <?php
+                                    if (!isset($_SESSION['user'])) {
+                                        echo "<a href='http://".$_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT']."/flow/login.php' id='loginBtn'>Login / Signup</a>";
+                                    } else {
+                                        echo "<a href='#' >Welcome, " . $_SESSION['user'] . "</a> &nbsp; &nbsp;| ";
+                                        echo "<a href='helpers/logout.php?lastPage=" . $_SERVER['REQUEST_URI'] . "'>&nbspLog out</a>";
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
