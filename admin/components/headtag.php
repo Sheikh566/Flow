@@ -11,6 +11,7 @@
 <link href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/admin/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" rel="stylesheet">
 <!-- Custom CSS -->
 <link href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/admin/dist/css/style.min.css" rel="stylesheet">
+<link href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/css/custom.css" rel="stylesheet">
 
 <!-- ============================================================== -->
 <!-- All Jquery -->
