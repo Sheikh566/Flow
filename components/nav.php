@@ -35,12 +35,6 @@
 
                     <!-- Menu -->
                     <div class="classy-menu">
-
-                        <!-- Close Button -->
-                        <div class="classycloseIcon">
-                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                        </div>
-
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
@@ -52,8 +46,10 @@
                                         <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/music/video.php">Video</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/artist.php">Artists</a></li>
+                                <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/artist.php">Artist</a></li>
+                                <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/contact.php">About us</a></li>
                                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/contact.php">Contact</a></li>
+
                             </ul>
 
                             <!-- Login/Register & Cart Button -->
@@ -61,14 +57,7 @@
                                 <!-- Login/Register -->
 
                                 <div class="login-register-btn mr-50">
-                                    <?php
-                                    if (!isset($_SESSION['user'])) {
-                                        echo "<a href='http://".$_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT']."/flow/login.php' id='loginBtn'>Login / Signup</a>";
-                                    } else {
-                                        echo "<a href='#' >Welcome, " . $_SESSION['user'] . "</a> &nbsp; &nbsp;| ";
-                                        echo "<a href='helpers/logout.php?lastPage=" . $_SERVER['REQUEST_URI'] . "'>&nbspLog out</a>";
-                                    }
-                                    ?>
+                                    <a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/login.php" id="loginBtn">Login / Signup</a>
                                 </div>
                             </div>
                         </div>

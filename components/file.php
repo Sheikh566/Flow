@@ -15,16 +15,16 @@
     <link rel="icon" href="dist/img/core-img/favicon.ico">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="dist/css/style.css">
-    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="dist/css/audioplayer.css">
-    <link rel="stylesheet" href="dist/css/animate.css">
-    <link rel="stylesheet" href="dist/css/classy-nav.css">
-    <link rel="stylesheet" href="dist/css/font-awesome.min.css">
-    <link rel="stylesheet" href="dist/css/magnific-popup.css">
-    <link rel="stylesheet" href="dist/css/one-music-icon.css">
-    <link rel="stylesheet" href="dist/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="dist/css/aos.css">
-    <!-- ##### All Javascript Script ##### -->
-
+    <link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/css/style.css">
+    <link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/css/audioplayer.css">
+    <link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/css/animate.css">
+    <link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/css/classy-nav.css">
+    <link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/css/magnific-popup.css">
+    <link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/css/one-music-icon.css">
+    <link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/css/aos.css">
+    
+    <link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/css/custom.css">
 </head>

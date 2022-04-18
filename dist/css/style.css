@@ -377,7 +377,9 @@ img {
         font-weight: 700;
         text-transform: capitalize;
         color: #ffffff;
-        font-size: 20px; }
+        font-size: 20px; 
+         margin-top: 15px;
+      }
         .header-area .oneMusic-main-menu .classy-navbar .classynav ul li a:hover, .header-area .oneMusic-main-menu .classy-navbar .classynav ul li a:focus {
           color: rgba(255, 255, 255, 0.7); }
         @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -446,7 +448,9 @@ img {
           font-weight: 700;
           font-size: 16px;
           cursor: pointer;
-          line-height: 1; }
+          line-height: 1; 
+          margin-left: 20px;
+        }
           .header-area .oneMusic-main-menu .login-register-cart-button .login-register-btn a:hover, .header-area .oneMusic-main-menu .login-register-cart-button .login-register-btn a:focus {
             color: rgba(255, 255, 255, 0.7); }
       .header-area .oneMusic-main-menu .login-register-cart-button .cart-btn {
@@ -1688,6 +1692,4 @@ img {
   .single-web-icon:hover {
     box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.15); }
 
-/* ====== The End ====== */
 
-/*# sourceMappingURL=style.css.map */

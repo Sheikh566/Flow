@@ -15,7 +15,7 @@
     </div>
     <div class="col-6" id="add-new-btn">
       <div class="text-end upgrade-btn">
-        <a href="./create.php" class="btn btn-primary text-white" ><i class="mdi mdi-plus"></i> Add</a>
+        <a href="./create.php" class="btn btn-primary" ><i class="mdi mdi-plus"></i> Add</a>
       </div>
     </div>
   </div>
