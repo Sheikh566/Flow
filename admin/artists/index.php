@@ -40,9 +40,9 @@ if (isset($_GET['m'])) {
                                 </div>
 
                             </div>
-                            <div class="card-body py-0">
+                            <div class="card-body py-0" style="height: 250px; border-color:black;">
                                 <div class="m-t-30">
-                                    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['artist_photo']); ?>" class="rounded-circle" style="object-fit: cover" width="150px" height="150px">
+                                    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['artist_photo']); ?>" class="rounded-circle" style="object-fit:cover" width="150px" height="150px">
                                     <center>
                                         <h4 class="card-title m-t-10"><?php echo $row['artist_name'] ?></h4>
                                     </center>

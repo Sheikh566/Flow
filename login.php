@@ -12,6 +12,7 @@ if (isset($_POST["submit"])) {
     if (mysqli_num_rows($db->res) > 0) {
         $user = mysqli_fetch_array($db->res);
         $_SESSION['user'] = $user['user_name'];
+        $_SESSION['user_img']=$user['user_img'];
         header('location:./index.php');
     } else {
         $db->select('admins', "*", "admin_email = '$email' AND admin_password = '$password'");
@@ -19,7 +20,8 @@ if (isset($_POST["submit"])) {
             $admin = mysqli_fetch_array($db->res);
             $_SESSION['admin'] = $admin['admin_name'];
             header('location:./admin/');
-        } else {
+        }
+        else {
             echo "<script>alert('Invalid Email or Password!')</script>";
         }
     }
