@@ -48,9 +48,8 @@ $db = new Database();
     <!-- ##### Breadcumb Area End ##### -->
     <section class="album-catagory section-padding-100-0">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="browse-by-catagories catagory-menu d-flex flex-wrap align-items-center mb-70">
+                <div class="col-md-12">
+                    <div class="browse-by-catagories catagory-menu d-flex justify-content-center flex-wrap mb-70">
                         <a href="#" data-filter="*">Browse All</a>
                         <a href="#" data-filter=".a" class="active">A</a>
                         <a href="#" data-filter=".b">B</a>
@@ -81,9 +80,8 @@ $db = new Database();
                         <a href="#" data-filter=".number">0-9</a>
                     </div>
                 </div>
-            </div>
 
-            <div class="row oneMusic-albums">
+            <div class="oneMusic-albums">
 
                 <?php
                 $db->select('artists', '*');
@@ -95,7 +93,7 @@ $db = new Database();
                 ?>
                     <a href="./artist.php?id=<?php echo $row['artist_id'] ?>" class="col-11 col-sm-4 col-md-3 col-lg-1 col-xl-1 single-album-item ms-4 <?php echo $firstLetters ?>">
                         <div class="single-album">
-                            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['artist_photo']); ?>" alt="Artist Photo" style="object-fit: cover; min-width: 200px; min-height: 200px;">
+                            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['artist_photo']); ?>" alt="Artist Photo" style="object-fit: cover; min-width: 200px; height: 200px;">
                             <div class="album-info">
                                 <h5><?php echo $row['artist_name'] ?></h5>
                                 <p>S E E &nbsp; A R T I S T</p>
@@ -106,37 +104,6 @@ $db = new Database();
             </div>
         </div>
     </section>
-    <!-- ##### Events Area Start ##### -->
-    <!-- <section class="events-area section-padding-100">
-        <div class="container">
-            <div class="row">
-            
-                <?php
-                foreach (range('A', 'Z') as $alpha) {
-                    $db->select('artists', 'artist_name, artist_photo', "artist_name LIKE '$alpha%' ORDER BY artist_name");
-                    if (mysqli_num_rows($db->res) > 0) echo "<h1>$alpha</h1>";
-                    while ($row = mysqli_fetch_assoc($db->res)) {
-
-                ?>
-                    
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="single-event-area mb-30">
-                            <div class="event-thumbnail">
-                                <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['artist_photo']); ?>" alt="artists_photos" style="object-fit: cover" height="150px" width="150px"">
-                            </div>
-                            <div class="event-text">
-                                <h4><?php echo $row["artist_name"]; ?></h4>
-                                <a href="#" class="btn see-more-btn">&nbsp;Listen</a>
-                            </div>
-                        </div>
-                    </div>
-                <?php
-                    }
-                }
-                ?>
-            </div>
-        </div>
-    </section> -->
 
 
     <?php
