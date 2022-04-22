@@ -755,6 +755,7 @@
     include 'components/footer.php';
     include  'components/scripts_file.php';
     ?>
+
 </body>
 
 </html>

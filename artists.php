@@ -106,6 +106,8 @@ $db = new Database();
             </div>
         </div>
     </section>
+
+    
     <!-- ##### Events Area Start ##### -->
     <!-- <section class="events-area section-padding-100">
         <div class="container">
