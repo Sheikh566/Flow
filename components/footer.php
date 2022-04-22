@@ -1,5 +1,5 @@
     <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area px-2">
+    <footer class="footer-area px-5">
         <div class="container row d-flex flex-wrap align-items-center justify-content-center">
             <div class="col-12 col-md-6 ">
                 <img src="img/core-img/logo.png" alt="">

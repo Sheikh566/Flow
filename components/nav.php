@@ -1,7 +1,7 @@
 <?php
-  if (session_status() === PHP_SESSION_NONE) {
+if (session_status() === PHP_SESSION_NONE) {
     session_start();
-  }
+}
 
 ?>
 
@@ -40,7 +40,7 @@
                         <div class="classynav">
                             <ul>
                                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow">Home</a></li>
-                                <li><a href="albums.php">Albums</a></li>
+                                <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/albums.php">Albums</a></li>
                                 <li><a href="#">Music</a>
                                     <ul class="dropdown">
                                         <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/music/audio.php">Audio</a></li>
@@ -51,19 +51,37 @@
                                 <!-- <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/contact.php">About us</a></li> -->
                             </ul>
 
-                            <!-- Login/Register & Cart Button -->
+                            <!-- Login/Register-->
                             <div class="login-register-cart-button d-flex align-items-center">
                                 <!-- Login/Register -->
 
                                 <div class="login-register-btn mr-50">
-                                <?php
+
+                                    <!----Login with Sessions----->
+                                    <?php
                                     if (!isset($_SESSION['user'])) {
-                                        echo "<a href='http://".$_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT']."/flow/login.php' id='loginBtn'>Login / Signup</a>";
+                                        echo "<a href='http://" . $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . "/flow/login.php' id='loginBtn'>Login / Signup</a>";
                                     } else {
-                                        echo "<a href='#' >Welcome, " . $_SESSION['user'] . "</a> &nbsp; &nbsp;| ";
-                                        echo "<a href='helpers/logout.php?lastPage=" . $_SERVER['REQUEST_URI'] . "'>&nbspLog out</a>";
-                                    }
                                     ?>
+                                        <li class="dropdown">
+                                            <a class="dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <?php
+                                                if ($_SESSION['user_img'] == null) {
+                                                    echo '<img class="img-circle" style="width:40px;height:40px;border-radius:50%;" src="dist/img/core-img/avatar.png">';
+                                                } else {
+                                                    echo ' <img class="img-circle" style="width:40px;height:40px;border-radius:50%;" src="">';
+                                                }
+                                                ?>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                                <a  href="#" class="text-dark">Profile</a>
+                                                <hr />
+                                                <?php echo "<a href='helpers/logout.php?lastPage=" . $_SERVER['REQUEST_URI'] . "' class='text-dark'>Logout</a>"; ?>
+                                            </div>
+                                        </li>
+
+                                    <?php } ?>
+
                                 </div>
                             </div>
                         </div>
@@ -75,3 +93,17 @@
         </div>
     </div>
 </header>
+
+
+<style>
+    li.dropdown::marker{
+      display: none;
+    }
+.img-circle{
+    border-radius: 50%;
+}
+    hr{
+        margin: 0px;
+        display: none;
+    }
+</style>

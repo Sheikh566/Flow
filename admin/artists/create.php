@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div class="mb-3">
                   <label for="photo" class="form-label">Photo</label>
-                  <input type="file" class="form-control" name="photo" aria-describedby="Photo">
+                  <input type="file" class="form-control" name="photo" aria-describedby="Photo" required>
                 </div>
                 <button type="submit" class="btn btn-primary" name="submit">Submit</button>
               </form>

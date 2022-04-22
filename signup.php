@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
   $db->insert('users', ['user_name' => $name, 'user_email' => $email, 'user_password' => $password]);
   if ($db->res) {
     $_SESSION['user'] = $name; 
-    header('location:./index.php');
+    header('location:./login.php');
   }
 }
 ?>

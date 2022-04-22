@@ -346,7 +346,7 @@ img {
   position: absolute;
   z-index: 1000;
   width: 100%;
-  top: 20px;
+  top: 0px;
   left: 0;
   z-index: 1000; }
   .header-area .oneMusic-main-menu {
@@ -359,13 +359,14 @@ img {
         height: 70px; } }
 
   .classy-nav-container{
-      background-color: transparent;
-       margin-right: 14px;
+      background-color: rgba(43, 43, 43, 0.5);
     }
 
     .header-area .oneMusic-main-menu .classy-navbar {
       background-color: transparent;
-      height: 85px; }
+      height: 85px;
+     
+     }
       @media only screen and (max-width: 767px) {
         .header-area .oneMusic-main-menu .classy-navbar {
           height: 70px;
@@ -377,8 +378,8 @@ img {
         font-weight: 700;
         text-transform: capitalize;
         color: #ffffff;
-        font-size: 20px; 
-         margin-top: 15px;
+        font-size: 24px; 
+        margin-right: 20px;
       }
         .header-area .oneMusic-main-menu .classy-navbar .classynav ul li a:hover, .header-area .oneMusic-main-menu .classy-navbar .classynav ul li a:focus {
           color: rgba(255, 255, 255, 0.7); }
@@ -440,16 +441,16 @@ img {
       .header-area .oneMusic-main-menu .login-register-cart-button .login-register-btn {
         position: relative;
         z-index: 10; }
-        .header-area .oneMusic-main-menu .login-register-cart-button .login-register-btn a {
+        .header-area .oneMusic-main-menu .login-register-btn a {
           -webkit-transition-duration: 500ms;
           transition-duration: 500ms;
           margin-bottom: 0;
           color: #fff;
           font-weight: 700;
-          font-size: 16px;
+          font-size: 20px;
           cursor: pointer;
           line-height: 1; 
-          margin-left: 20px;
+          margin-left: 25px;
         }
           .header-area .oneMusic-main-menu .login-register-cart-button .login-register-btn a:hover, .header-area .oneMusic-main-menu .login-register-cart-button .login-register-btn a:focus {
             color: rgba(255, 255, 255, 0.7); }
@@ -1691,5 +1692,3 @@ img {
     font-size: 16px; }
   .single-web-icon:hover {
     box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.15); }
-
-
