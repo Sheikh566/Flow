@@ -1,18 +1,19 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <?php
-       include 'components/file.php';
-   ?>
+    <?php
+    include 'components/file.php';
+    ?>
 </head>
+
 <body>
-<?php
-       include 'components/nav.php';
-   ?>
-    
-<!-- ##### Hero Area Start ##### -->
-<section class="hero-area">
+    <?php
+    include 'components/nav.php';
+    ?>
+
+    <!-- ##### Hero Area Start ##### -->
+    <section class="hero-area">
         <div class="hero-slides owl-carousel">
             <!-- Single Hero Slide -->
             <div class="single-hero-slide d-flex align-items-center justify-content-center">
@@ -26,8 +27,7 @@
                                 <h6 data-animation="fadeInUp" data-delay="100ms">Latest Release</h6>
                                 <h2 data-animation="fadeInUp" data-delay="300ms">PHIR MILENGE <span>PHIR MILENGE</span>
                                 </h2>
-                                <a data-animation="fadeInUp" data-delay="500ms" href="music/audio.php"
-                                    class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
+                                <a data-animation="fadeInUp" data-delay="500ms" href="music/audio.php" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -45,8 +45,7 @@
                             <div class="hero-slides-content text-center">
                                 <h6 data-animation="fadeInUp" data-delay="100ms">Upcomming album</h6>
                                 <h2 data-animation="fadeInUp" data-delay="300ms">UTOPIA<span>UTOPIA</span></h2>
-                                <a data-animation="fadeInUp" data-delay="500ms" href="albums.php"
-                                    class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
+                                <a data-animation="fadeInUp" data-delay="500ms" href="albums.php" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -64,8 +63,7 @@
                             <div class="hero-slides-content text-center">
                                 <h6 data-animation="fadeInUp" data-delay="100ms">Latest album</h6>
                                 <h2 data-animation="fadeInUp" data-delay="300ms">HAPPIER THAN EVER<span>HAPPIER THAN EVER</span></h2>
-                                <a data-animation="fadeInUp" data-delay="500ms" href="albums.php"
-                                    class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
+                                <a data-animation="fadeInUp" data-delay="500ms" href="albums.php" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -415,8 +413,7 @@
     <!-- ##### Buy Now Area End ##### -->
 
     <!-- ##### Featured Artist Area Start ##### -->
-    <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed"
-        style="background-image: url(dist/img/bg-img/bg-4.jpg);">
+    <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(dist/img/bg-img/bg-4.jpg);">
         <div class="container">
             <div class="row align-items-end">
                 <div class="col-12 col-md-5 col-lg-4">
@@ -427,7 +424,7 @@
                 <div class="col-12 col-md-7 col-lg-8">
                     <div class="featured-artist-content">
                         <!-- Section Heading -->
-                        <div class="section-heading white text-left mb-30" >
+                        <div class="section-heading white text-left mb-30">
                             <p>See what’s new</p>
                             <h2>Buy What’s New</h2>
                         </div>
@@ -540,8 +537,7 @@
                         </div>
 
                         <!-- Single Top Item -->
-                        <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp"
-                            data-wow-delay="100ms">
+                        <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="100ms">
                             <div class="first-part d-flex align-items-center">
                                 <div class="thumbnail">
                                     <img src="dist/img/bg-img/wt7.jpg" alt="">
@@ -557,8 +553,7 @@
                         </div>
 
                         <!-- Single Top Item -->
-                        <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp"
-                            data-wow-delay="150ms">
+                        <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="150ms">
                             <div class="first-part d-flex align-items-center">
                                 <div class="thumbnail">
                                     <img src="dist/img/bg-img/wt8.jpg" alt="">
@@ -574,8 +569,7 @@
                         </div>
 
                         <!-- Single Top Item -->
-                        <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp"
-                            data-wow-delay="200ms">
+                        <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="200ms">
                             <div class="first-part d-flex align-items-center">
                                 <div class="thumbnail">
                                     <img src="dist/img/bg-img/wt9.jpg" alt="">
@@ -591,8 +585,7 @@
                         </div>
 
                         <!-- Single Top Item -->
-                        <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp"
-                            data-wow-delay="250ms">
+                        <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="250ms">
                             <div class="first-part d-flex align-items-center">
                                 <div class="thumbnail">
                                     <img src="dist/img/bg-img/wt10.jpg" alt="">
@@ -608,8 +601,7 @@
                         </div>
 
                         <!-- Single Top Item -->
-                        <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp"
-                            data-wow-delay="300ms">
+                        <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="300ms">
                             <div class="first-part d-flex align-items-center">
                                 <div class="thumbnail">
                                     <img src="dist/img/bg-img/wt11.jpg" alt="">
@@ -625,8 +617,7 @@
                         </div>
 
                         <!-- Single Top Item -->
-                        <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp"
-                            data-wow-delay="350ms">
+                        <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="350ms">
                             <div class="first-part d-flex align-items-center">
                                 <div class="thumbnail">
                                     <img src="dist/img/bg-img/wt12.jpg" alt="">
@@ -729,9 +720,8 @@
     <!-- ##### Miscellaneous Area End ##### -->
 
 
-     <!-- ##### Contact Area Start ##### -->
-     <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img"
-        style="background-image: url(dist/img/bg-img/bg-2.jpg);">
+    <!-- ##### Contact Area Start ##### -->
+    <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img" style="background-image: url(dist/img/bg-img/bg-2.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -765,13 +755,11 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group wow fadeInUp" data-wow-delay="400ms">
-                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10"
-                                            placeholder="Message"></textarea>
+                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
-                                    <button class="btn oneMusic-btn mt-30" type="submit">Send <i
-                                            class="fa fa-angle-double-right"></i></button>
+                                    <button class="btn oneMusic-btn mt-30" type="submit">Send <i class="fa fa-angle-double-right"></i></button>
                                 </div>
                             </div>
                         </form>
@@ -783,8 +771,9 @@
     <!-- ##### Contact Area End ##### -->
 
     <?php
-         include 'components/footer.php';
-         include  'components/scripts_file.php';
+    include 'components/footer.php';
+    include  'components/scripts_file.php';
     ?>
 </body>
+
 </html>
