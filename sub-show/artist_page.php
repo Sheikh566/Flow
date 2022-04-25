@@ -30,9 +30,7 @@ if (isset($_GET['id'])) {
         text-align: center;
     }
 
-    .col-md-4{
-        border: 1px solid black;
-    }
+   
     </style>
 </head>
 

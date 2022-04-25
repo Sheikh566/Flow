@@ -14,9 +14,9 @@ if (isset($_POST["submit"])) {
         $_SESSION['user'] = $user['user_name'];
         $_SESSION['user_img']=$user['user_img'];
         header('location:./index.php');
-    } else {
+    } else{
         $db->select('admins', "*", "admin_email = '$email' AND admin_password = '$password'");
-        if (mysqli_num_rows($db->res) > 0) {
+        if(mysqli_num_rows($db->res) > 0) {
             $admin = mysqli_fetch_array($db->res);
             $_SESSION['admin'] = $admin['admin_name'];
             header('location:./admin/');

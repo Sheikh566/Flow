@@ -763,6 +763,8 @@
     </section>
     <!-- ##### Contact Area End ##### -->
 
+    
+
     <?php
          include 'components/footer.php';
          include  'components/scripts_file.php';
