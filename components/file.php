@@ -9,11 +9,10 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Flow Music</title>
+    <title>Flow-The Music Streamers</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/img/core-img/favicon.ico">
-
+    <link rel="icon" href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/img/core-img/flow.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/css/style.css">

@@ -1,40 +1,36 @@
 .breakpoint-off .classynav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -ms-grid-row-align: center;
-  align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
 }
 
-.sidebar-nav ul .sidebar-item.selected > .sidebar-link {
-  background-color: #212529 !important;
-  color: #fff !important;
-  opacity: 1;
+.sidebar-nav ul .sidebar-item.selected>.sidebar-link {
+    background-color: #212529 !important;
+    color: #fff!important;
+    opacity: 1;
 }
 
-.btn-primary {
-  background-color: #fff !important;
-  border: 1px solid #000;
-  color: black;
+.btn-primary{
+    background-color: #fff !important;
+    border: 1px solid #000;
+    color:black;
   font-weight: 700;
   text-transform: capitalize;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
 }
 
-.btn-primary:hover {
-  font-weight: 700;
-  background-color: #000000 !important;
-  color: #fff;
+.btn-primary:hover{
+    font-weight: 700;
+    background-color: #000000 !important;
+    color: #fff;
 }
 
-.btn-primary:focus {
-  background-color: #212529;
+.btn-primary:focus{
+    background-color: #212529 !important;
 }
-/* Artists Page */
-.album-info {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+
+
