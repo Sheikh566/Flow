@@ -21,9 +21,9 @@ $db = new Database();
 
         /* Main aspect ratio of artist image*/
         .single-album>img {
-            width: 100%;  
+            width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
 
         }
 
@@ -48,6 +48,16 @@ $db = new Database();
                 min-width: 150px;
             }
         }
+
+        /* @media screen and (max-width: 1440px) {
+            .single-album-item {
+                display: block;
+                padding: 10px;
+                width: 10
+            }
+        } */
+
+     
     </style>
 </head>
 

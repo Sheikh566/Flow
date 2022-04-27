@@ -21,6 +21,7 @@
       $query = "SELECT $cols FROM $table1 JOIN $table2 ON $on";
       $where_clause = " WHERE $conds";
       if ($conds!= "") $query.= $where_clause;
+      var_dump($query);
       $this->res = mysqli_query($this->conn, $query);
     }
     public function insert($table, $cols=array()) {
