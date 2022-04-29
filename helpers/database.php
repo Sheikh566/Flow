@@ -7,7 +7,7 @@
     
     function __construct()
     {
-      $this->conn = mysqli_connect("localhost", "root", "321", "flow");
+      $this->conn = mysqli_connect("localhost", "root", "", "flow");
     }
     public function select($table, $cols, $conds="") 
     {
@@ -42,8 +42,5 @@
       $query = "DELETE FROM $table WHERE $conds";
       $this->res = mysqli_query($this->conn, $query);
     }
-
- 
-
   }
 ?>

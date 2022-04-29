@@ -6,10 +6,10 @@ $db->selectJoin('albums', 'artists', 'albums.*, artists.artist_name', 'albums.al
 $albums = $db->res;
 
 $db->selectJoin(
-    'artists', 
-    'music', 
-    'artists.*, count(music.music_id) as total_tracks', 
-    'music.music_artist = artists.artist_id', 
+    'artists',
+    'music',
+    'artists.*, count(music.music_id) as total_tracks',
+    'music.music_artist = artists.artist_id',
     "1=1 GROUP BY artists.artist_id",
     "LEFT"
 );
@@ -23,13 +23,15 @@ $artists = $db->res;
     include 'components/file.php';
     ?>
     <style>
-        .single-album>img, .album-thumb > img {
+        .single-album>img,
+        .album-thumb>img {
             object-fit: cover;
-            height: 200px;
-            width: 200px;
-            
+            height: 240px;
+            width: 240px;
+
         }
-        .album-thumb > img {
+
+        .album-thumb>img {
             border-radius: 5px;
         }
     </style>
@@ -181,40 +183,43 @@ $artists = $db->res;
             <div class="row">
                 <div class="col-12">
                     <div class="load-more-btn text-center wow fadeInUp" data-wow-delay="300ms">
-                        <a href="./artists.php" class="btn oneMusic-btn">Load More <i class="fa fa-angle-double-right"></i></a>
+                        <a href="./artists.php" class="btn oneMusic-btn">See All Artists <i class="fa fa-angle-double-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- ##### Buy Now Area End ##### -->
-
+                    <?php 
+                    $db->select('music', 'music_thumbnail, music_path', 'music_id = 2');
+                    $pasoori = mysqli_fetch_assoc($db->res);
+                    ?>
     <!-- ##### Featured Artist Area Start ##### -->
     <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(dist/img/bg-img/bg-4.jpg);">
         <div class="container">
             <div class="row align-items-end">
                 <div class="col-12 col-md-5 col-lg-4">
                     <div class="featured-artist-thumb">
-                        <img src="dist/img/bg-img/fa.jpg" alt="" data-aos="zoom-in">
+                        <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($pasoori['music_thumbnail']); ?>" alt="Featured Music Thumbnail" data-aos="zoom-in">
                     </div>
                 </div>
                 <div class="col-12 col-md-7 col-lg-8">
                     <div class="featured-artist-content">
                         <!-- Section Heading -->
                         <div class="section-heading white text-left mb-30">
-                            <p>See what’s new</p>
-                            <h2>Buy What’s New</h2>
+                            <p>Trending Now</p>
+                            <h2>About Pasoori</h2>
                         </div>
-                        <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius
-                            rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis
-                            nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante. Donec
-                            in velit non elit pulvinar pellentesque et non eros.</p>
+                        <p class="fs-6">
+                            Pasoori is a Punjabi song released in 2022 in Coke Studio.
+                            The song was composed by talented musicians such as Ali Sethi and Shae Gill.
+                        </p>
                         <div class="song-play-area" data-aos="fade-bottom">
                             <div class="song-name">
-                                <p>01. Cheez Badi</p>
+                                <p>Pasoori | Ali Sethi x Shae Gill</p>
                             </div>
                             <audio preload="auto" controls>
-                                <source src="./dist/audio/cheez-badi-hai.mp3">
+                                <source src=".<?php echo $pasoori['music_path']?>">
                             </audio>
                         </div>
                     </div>
@@ -325,7 +330,7 @@ $artists = $db->res;
                                 </div>
                             </div>
                             <audio preload="auto" controls>
-                                <source src="audio/dummy-audio.mp3">
+                                <source src="">
                             </audio>
                         </div>
 
@@ -341,7 +346,7 @@ $artists = $db->res;
                                 </div>
                             </div>
                             <audio preload="auto" controls>
-                                <source src="audio/dummy-audio.mp3">
+                                <source src="">
                             </audio>
                         </div>
 
@@ -357,7 +362,7 @@ $artists = $db->res;
                                 </div>
                             </div>
                             <audio preload="auto" controls>
-                                <source src="audio/dummy-audio.mp3">
+                                <source src="">
                             </audio>
                         </div>
 
@@ -373,7 +378,7 @@ $artists = $db->res;
                                 </div>
                             </div>
                             <audio preload="auto" controls>
-                                <source src="audio/dummy-audio.mp3">
+                                <source src="">
                             </audio>
                         </div>
 
@@ -389,7 +394,7 @@ $artists = $db->res;
                                 </div>
                             </div>
                             <audio preload="auto" controls>
-                                <source src="audio/dummy-audio.mp3">
+                                <source src="">
                             </audio>
                         </div>
 
@@ -405,7 +410,7 @@ $artists = $db->res;
                                 </div>
                             </div>
                             <audio preload="auto" controls>
-                                <source src="audio/dummy-audio.mp3">
+                                <source src="">
                             </audio>
                         </div>
                     </div>
@@ -498,7 +503,7 @@ $artists = $db->res;
 
 
     <!-- ##### Contact Area Start ##### -->
-    <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img" style="background-image: url(dist/img/bg-img/bg-2.jpg);">
+    <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img" style="background-image: url(dist/img/bg-img/billie-bg.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-12">

@@ -12,6 +12,10 @@
 
     <!--Aos plugin---->
     <script src="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/js/aos.js"></script>
+
+    <!-- Progress Bar Logic -->
+
+    
     <script>
     AOS.init();
   </script>

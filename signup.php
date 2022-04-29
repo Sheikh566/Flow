@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
     <!-- ##### Breadcumb Area Start ##### -->
     <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(dist/img/bg-img/breadcumb3.jpg);">
         <div class="bradcumbContent">
-            <p>Hi ! There</p>
+            <p>Hi There!</p>
             <h2>Create an account</h2>
         </div>
     </section>
@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
                             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                                 <div class="form-group">
                                     <label for="name">Name</label>
-                                    <input type="text" class="form-control" name="name" maxlength="50">
+                                    <input type="text" class="form-control" name="name" maxlength="50" required>
                                     <!-- <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small> -->
                                 </div>
                                 <div class="form-group">
@@ -95,7 +95,7 @@ if (isset($_POST['submit'])) {
     ?>
     <script>
         $(document).ready(function() {
-            $("#pass2").change(function() {
+            $("#pass2").on('keyup', function() {
                 $("#submit").addClass('disabled');
                 let passMatch = $("#pass1").val() === $("#pass2").val();
                 $("#passMessage").prop('hidden', passMatch);

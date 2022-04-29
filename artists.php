@@ -44,8 +44,8 @@ $db = new Database();
             letter-spacing: .6px;
         }
         .single-album > img {
-            width: 250px;
-            height: 250px;
+            width: 280px;
+            height: 280px;
             object-fit: cover;
         }
         
