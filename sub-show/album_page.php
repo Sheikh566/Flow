@@ -8,8 +8,11 @@ $db = new Database();
 
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
-  $db->selectJoin('albums','music', 'albums.*, music.*', "albums.album_id = music.music_album", "album_id = $id");
+  $db->selectJoin('albums', 'artists', 'albums.*, artists.*', "artists.artist_id = albums.album_artist", "album_id = $id");
   $album = mysqli_fetch_assoc($db->res);
+
+  $db->select('music', '*', "music_album = $id");
+  $music = $db->res;
 }
 ?>
 
@@ -25,8 +28,15 @@ if (isset($_GET['id'])) {
     .bg-img {
       background-image: url("<?php echo 'data:image/jpg;charset=utf8;base64,' . base64_encode($album['album_thumbnail']) ?>");
     }
+
     .music-list-wrapper {
       width: 150%;
+    }
+    .artist > img {
+      object-fit: cover;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
     }
   </style>
 </head>
@@ -38,7 +48,7 @@ if (isset($_GET['id'])) {
 
   <!-- ##### Breadcumb Area Start ##### -->
   <?php
-  $bg = "background-image: url(data:image/jpg;charset=utf8;base64," . base64_encode($album['album_thumbnail']) . ")";
+
   ?>
   <section class="breadcumb-area bg-img bg-overlay">
     <div class="bradcumbContent">
@@ -55,23 +65,24 @@ if (isset($_GET['id'])) {
         <div class="weeks-top-area mb-100">
           <div class="section-heading text-left mb-50 wow fadeInUp" data-wow-delay="50ms">
             <div class="artist d-flex justify-content-between">
-            <p>Artist: </p> <img src="" alt="Artist Image">
+              <p>Artist: </p>
+              <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($album['artist_photo']); ?>" alt="Artist Image">
             </div>
             <h2>This week’s top</h2>
-            
           </div>
 
+          <?php while($row = mysqli_fetch_assoc($music)) { ?>
           <!-- Single Top Item -->
           <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="100ms">
             <div class="thumbnail">
-              <img src="dist/img/bg-img/wt1.jpg" alt="">
+              <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['music_thumbnail']); ?>" alt="">
             </div>
             <div class="content-">
-              <h6>Sam Smith</h6>
+              <h6><?php echo $row['music_title'] ?></h6>
               <p>Underground</p>
             </div>
           </div>
-
+            <?php } ?>
           <!-- Single Top Item -->
           <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="150ms">
             <div class="thumbnail">
