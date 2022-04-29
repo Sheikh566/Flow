@@ -7,7 +7,7 @@
     
     function __construct()
     {
-      $this->conn = mysqli_connect("localhost", "root", "", "flow");
+      $this->conn = mysqli_connect("localhost", "root", "321", "flow");
     }
     public function select($table, $cols, $conds="") 
     {

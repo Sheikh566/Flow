@@ -31,8 +31,41 @@ $db = new Database();
             display: block;
             padding: 0;
             min-width: 250px;
+            
         }
-
+        p.see-artist {
+            transition: letter-spacing .1s ease-out;
+        }
+        .single-album-item:hover {
+            transform: scale(1.05);
+            z-index: 99;
+        }
+        .single-album-item:hover p.see-artist {
+            letter-spacing: .6px;
+        }
+        .single-album > img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .single-album-item {
+                display: block;
+                padding: 0;
+                min-width: 150px;
+            }
+            .single-album > img {
+                width: 90vw;
+                height: 90vw;
+            }
+            h5.artist-name {
+                font-size: 30px !important;
+            }
+            p.see-artist {
+                font-size: 15px !important;
+            }
+        }
         @media screen and (max-width: 480px) {
             .single-album-item {
                 display: block;
@@ -41,13 +74,6 @@ $db = new Database();
             }
         }
 
-        @media screen and (max-width: 768px) {
-            .single-album-item {
-                display: block;
-                padding: 0;
-                min-width: 150px;
-            }
-        }
 
         /* @media screen and (max-width: 1440px) {
             .single-album-item {
@@ -119,10 +145,10 @@ $db = new Database();
                 ?>
                     <a href="sub-show/artist_page.php?id=<?php echo $row['artist_id'] ?>" class="single-album-item ms-4 <?php echo $firstLetters ?>">
                         <div class="single-album">
-                            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['artist_photo']); ?>" alt="Artist Photo" style="object-fit: cover; min-width: 200px; height: 200px;">
+                            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['artist_photo']); ?>" alt="Artist Photo" >
                             <div class="album-info">
-                                <h5><?php echo $row['artist_name'] ?></h5>
-                                <p>S E E &nbsp; A R T I S T</p>
+                                <h5 class="artist-name"><?php echo $row['artist_name'] ?></h5>
+                                <p class="see-artist">S E E &nbsp; A R T I S T</p>
                             </div>
                         </div>
                     </a>
