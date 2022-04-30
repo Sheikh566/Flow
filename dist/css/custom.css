@@ -44,3 +44,7 @@ img {
 }
 
 
+form input, textarea {
+    font-family: "Archivo Narrow";
+    font-size: 20px !important;
+}
