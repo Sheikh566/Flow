@@ -25,14 +25,13 @@ if (!isset($_SESSION['admin'])) {
 <header class="topbar" data-navbarbg="skin6">
   <nav class="navbar top-navbar navbar-expand-md navbar-light">
     <div class="navbar-header" data-logobg="skin6">
-          <!-- ============================================================== -->
-          <!-- Logo -->
-          <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Logo -->
+        <!-- ============================================================== -->
         <a class="navbar-brand" href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/admin/index.php">
             <!-- Logo icon -->
             <b class="logo-icon">
-                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                <img src="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/img/core-img/flow-dark.png" width="100px" alt="homepage" class="dark-logo" />
+              <img src="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/img/core-img/flow-dark.png" width="100px" alt="homepage" class="dark-logo" />
             </b>
         </a>
         <!-- This is for the sidebar toggle which is visible on mobile only -->

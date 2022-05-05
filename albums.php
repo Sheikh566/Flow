@@ -175,7 +175,7 @@ $db = new Database();
         ?>
           <a href="./sub-show/album_page.php?id=<?php echo $row['album_id'] ?>" class="single-album-item ms-4 <?php echo $firstLetters ?>">
             <div class="single-album">
-              <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['album_thumbnail']); ?>" alt="Album Thumbnail" >
+              <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['album_thumbnail']); ?>" alt="Album Thumbnail">
               <div class="album-info">
                 <h5><?php echo $row['album_title'] ?></h5>
                 <p>S E E &nbsp; A L B U M</p>
