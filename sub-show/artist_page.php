@@ -93,7 +93,7 @@ if (isset($_GET['id'])) {
                             <div class="single-album">
                                 <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['album_thumbnail']); ?>" alt="Album Photo" style="object-fit: cover; " />
                                 <div class="album-info">
-                                    <a href="#">
+                                    <a href="album_page.php?id=<?php echo $row['album_id'] ?>">
                                         <h5 class="text-dark"><?php echo $row['album_title'] ?></h5>
                                     </a>
                                     <p><?php echo $row['album_year'] ?></p>
@@ -111,7 +111,7 @@ if (isset($_GET['id'])) {
                             <div class="single-album">
                                 <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['music_thumbnail']); ?>" alt="Music Photo" style="object-fit: cover; " />
                                 <div class="album-info">
-                                    <a href="#">
+                                    <a href="music-info.php?id=<?php echo $row['music_id'] ?>">
                                         <h5 class="text-dark"><?php echo $row['music_title'] ?></h5>
                                     </a>
                                     <p><?php echo $row['music_year'] ?></p>

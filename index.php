@@ -57,7 +57,7 @@ $artists = $db->res;
                 <h6 data-animation="fadeInUp" data-delay="100ms">Latest Release</h6>
                 <h2 data-animation="fadeInUp" data-delay="300ms">PHIR MILENGE <span>PHIR MILENGE</span>
                 </h2>
-                <a data-animation="fadeInUp" data-delay="500ms" href="music/audio.php" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
+                <a data-animation="fadeInUp" data-delay="500ms" href="music/music.php" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
               </div>
             </div>
           </div>
@@ -158,17 +158,10 @@ $artists = $db->res;
             <div class="single-album-area wow fadeInUp" data-wow-delay="100ms">
               <div class="album-thumb">
                 <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['artist_photo']); ?>" alt="Artist Photo">
-                <!-- Album Price -->
-                <!-- <div class="album-price">
-                                <p>$0.90</p>
-                            </div> -->
-                <!-- Play Icon -->
-                <!-- <div class="play-icon">
-                                <a href="#" class="video--play--btn"><span class="icon-play-button"></span></a>
-                            </div> -->
+               
               </div>
-              <div class="album-info">
-                <a href="#">
+              <div class="album-info" style="text-align: center;">
+                <a href="sub-show/artist_page.php?id=<?php echo $row['artist_id']; ?>">
                   <h5><?php echo $row['artist_name'] ?></h5>
                 </a>
                 <p>Tracks: <?php echo $row['total_tracks'] ?></p>
@@ -191,7 +184,7 @@ $artists = $db->res;
   </section>
   <!-- ##### Buy Now Area End ##### -->
   <?php
-  $db->select('music', 'music_thumbnail, music_path', 'music_id = 2');
+  $db->select('music', 'music_thumbnail, music_path', 'music_id = 1');
   $pasoori = mysqli_fetch_assoc($db->res);
   ?>
   <!-- ##### Featured Artist Area Start ##### -->
@@ -240,85 +233,24 @@ $artists = $db->res;
               <p>Worldwide</p>
               <h2>New Hits</h2>
             </div>
-
+           <?php 
+                $db->select('music','music_title , music_thumbnail,music_artist');
+              while($music = mysqli_fetch_assoc($db->res)){
+           ?>
             <!-- Single Top Item -->
             <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="100ms">
               <div class="first-part d-flex align-items-center">
                 <div class="thumbnail">
-                  <img src="dist/img/bg-img/wt7.jpg" alt="">
+                  <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($music['music_thumbnail']); ?>" alt="">
                 </div>
                 <div class="content-">
-                  <h6>Sam Smith</h6>
-                  <p>Underground</p>
+                  <h6><?php echo $music['music_title'] ?></h6>
+                  <p><?php echo $music['music_artist']?></p>
                 </div>
               </div>
             </div>
-
-            <!-- Single Top Item -->
-            <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="150ms">
-              <div class="first-part d-flex align-items-center">
-                <div class="thumbnail">
-                  <img src="dist/img/bg-img/wt8.jpg" alt="">
-                </div>
-                <div class="content-">
-                  <h6>Power Play</h6>
-                  <p>In my mind</p>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Single Top Item -->
-            <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="200ms">
-              <div class="first-part d-flex align-items-center">
-                <div class="thumbnail">
-                  <img src="dist/img/bg-img/wt9.jpg" alt="">
-                </div>
-                <div class="content-">
-                  <h6>Cristinne Smith</h6>
-                  <p>My Music</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Single Top Item -->
-            <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="250ms">
-              <div class="first-part d-flex align-items-center">
-                <div class="thumbnail">
-                  <img src="dist/img/bg-img/wt10.jpg" alt="">
-                </div>
-                <div class="content-">
-                  <h6>The Music Band</h6>
-                  <p>Underground</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Single Top Item -->
-            <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="300ms">
-              <div class="first-part d-flex align-items-center">
-                <div class="thumbnail">
-                  <img src="dist/img/bg-img/wt11.jpg" alt="">
-                </div>
-                <div class="content-">
-                  <h6>Creative Lyrics</h6>
-                  <p>Songs and stuff</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Single Top Item -->
-            <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="350ms">
-              <div class="first-part d-flex align-items-center">
-                <div class="thumbnail">
-                  <img src="dist/img/bg-img/wt12.jpg" alt="">
-                </div>
-                <div class="content-">
-                  <h6>The Culture</h6>
-                  <p>Pop Songs</p>
-                </div>
-              </div>
-            </div>
+          
+            <?php } ?>
           </div>
         </div>
 
@@ -341,60 +273,6 @@ $artists = $db->res;
               </div>
             </div>
 
-            <!-- Single Top Item -->
-            <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="150ms">
-              <div class="thumbnail">
-                <img src="dist/img/bg-img/wt2.jpg" alt="">
-              </div>
-              <div class="content-">
-                <h6>Power Play</h6>
-                <p>In my mind</p>
-              </div>
-            </div>
-
-            <!-- Single Top Item -->
-            <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="200ms">
-              <div class="thumbnail">
-                <img src="dist/img/bg-img/wt3.jpg" alt="">
-              </div>
-              <div class="content-">
-                <h6>Cristinne Smith</h6>
-                <p>My Music</p>
-              </div>
-            </div>
-
-            <!-- Single Top Item -->
-            <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="250ms">
-              <div class="thumbnail">
-                <img src="dist/img/bg-img/wt4.jpg" alt="">
-              </div>
-              <div class="content-">
-                <h6>The Music Band</h6>
-                <p>Underground</p>
-              </div>
-            </div>
-
-            <!-- Single Top Item -->
-            <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="300ms">
-              <div class="thumbnail">
-                <img src="dist/img/bg-img/wt5.jpg" alt="">
-              </div>
-              <div class="content-">
-                <h6>Creative Lyrics</h6>
-                <p>Songs and stuff</p>
-              </div>
-            </div>
-
-            <!-- Single Top Item -->
-            <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="350ms">
-              <div class="thumbnail">
-                <img src="dist/img/bg-img/wt6.jpg" alt="">
-              </div>
-              <div class="content-">
-                <h6>The Culture</h6>
-                <p>Pop Songs</p>
-              </div>
-            </div>
 
           </div>
         </div>
