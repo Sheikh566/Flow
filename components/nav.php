@@ -1,7 +1,8 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
-}
+  }
+  
 
 ?>
 
@@ -44,7 +45,6 @@ if (session_status() === PHP_SESSION_NONE) {
                                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/artists.php">Artists</a></li>
                                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/browse.php">Browse</a></li>
                             </ul>
-
                             <!-- Login/Register-->
                             <div class="login-register-cart-button d-flex align-items-center">
                                 <!-- Login/Register -->

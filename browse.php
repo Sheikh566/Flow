@@ -103,6 +103,7 @@ if (isset($_GET['search'])) {
       height: 60px;
       border: 2px solid black !important;
       border-radius: 0 2px 2px 0;
+      transition: 1s all ease;
 
     }
 
@@ -173,7 +174,7 @@ if (isset($_GET['search'])) {
   ?>
 
   <!-- ##### Breadcumb Area Start ##### -->
-  <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(../dist/img/bg-img/album-bg.jpg);">
+  <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(dist/img/bg-img/wt10.jpg);">
     <div class="bradcumbContent">
       <h2>Browse</h2>
     </div>
