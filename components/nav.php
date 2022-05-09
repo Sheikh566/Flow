@@ -41,6 +41,7 @@ if (session_status() === PHP_SESSION_NONE) {
                         <div class="classynav">
                             <ul>
                                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow">Home</a></li>
+                                <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/music/music.php">Music</a></li>
                                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/albums.php">Albums</a></li>
                                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/artists.php">Artists</a></li>
                                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/browse.php">Browse</a></li>
@@ -57,7 +58,7 @@ if (session_status() === PHP_SESSION_NONE) {
                                         echo "<a href='http://" . $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . "/flow/login.php' id='loginBtn'>Login / Signup</a>";
                                     } else {
                                        echo '<h6 class="text-white">Hi , ' .$_SESSION["user"] . '
-                                       <a href="helpers/logout.php?lastPage=' . $_SERVER['REQUEST_URI'] . '" class="btn btn-dark">
+                                       <a href="http://'.$_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'].'/flow/helpers/logout.php?lastPage=' . $_SERVER['REQUEST_URI'] . '" class="btn btn-dark">
                                            <span class="fa fa-sign-out"></span>Log out
                                        </a>
                                    </h6>';

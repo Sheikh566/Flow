@@ -4,6 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 include $_SERVER['DOCUMENT_ROOT'] . '/flow/helpers/database.php';
 
+// Check credentials first in User's table then in Admin's table
 $db = new Database();
 if (isset($_POST["submit"])) {
     $email = $_POST["email"];

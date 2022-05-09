@@ -1,4 +1,7 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+      session_start();
+  }
 include $_SERVER['DOCUMENT_ROOT'] . '/flow/helpers/database.php';
 $db = new Database();
 ?>
@@ -126,17 +129,18 @@ $db = new Database();
       </section>
 
       <section id="special" class="container-fluid">
-            <h1 class="mt-5">REGIONAL SONGS</h1>
+            <h1 class="mt-5 text-center">REGIONAL SONGS</h1>
             <hr>
             <div class="card-container">
                   <?php
-                  $db->select('music', '*', 'music_language = "REGIONAL"');
+                    $db->selectJoin('music','artists', 'music.*, artists.artist_name', "artists.artist_id = music.music_artist","music.music_language = 'REGIONAL'");
+
                   while ($row = mysqli_fetch_assoc($db->res)) {
                   ?>
                         <div class="card">
-                              <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['music_thumbnail']); ?>" alt="Music Thumbnail">
+                              <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['music_thumbnail']); ?>" alt="Music Thumbnail" style="object-fit: cover">
                               <h2><?php echo $row['music_title'] ?></h2>
-                              <p><?php echo $row['music_artist'] ?></p>
+                              <p><?php echo $row['artist_name'] ?></p>
                               <a href="../sub-show/music-info.php?id=<?php echo $row['music_id'] ?>"><button class="btn">Play</button></a>
                         </div>
                   <?php } ?>
@@ -147,17 +151,18 @@ $db = new Database();
 
 
       <section id="special" class="container-fluid">
-            <h1 class="mt-5">ENGLISH SONGS</h1>
+            <h1 class="mt-5 text-center">ENGLISH SONGS</h1>
             <hr>
             <div class="card-container">
                   <?php
-                  $db->select('music', '*', 'music_language = "ENGLISH"');
+$db->selectJoin('music','artists', 'music.*, artists.artist_name', "artists.artist_id = music.music_artist","music.music_language = 'ENGLISH'");
+
                   while ($row = mysqli_fetch_assoc($db->res)) {
                   ?>
                         <div class="card">
-                              <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['music_thumbnail']); ?>" alt="Music Thumbnail">
+                              <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['music_thumbnail']); ?>" alt="Music Thumbnail" style="object-fit: cover">
                               <h2><?php echo $row['music_title'] ?></h2>
-                              <p><?php echo $row['music_artist'] ?></p>
+                              <p><?php echo $row['artist_name'] ?></p>
                               <a href="../sub-show/music-info.php?id=<?php echo $row['music_id'] ?>"><button class="btn">View</button></a>
                         </div>
                   <?php } ?>

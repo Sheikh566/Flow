@@ -234,7 +234,7 @@ $artists = $db->res;
               <h2>New Hits</h2>
             </div>
            <?php 
-                $db->select('music','music_title , music_thumbnail,music_artist');
+              $db->selectJoin('music','artists', 'music.*, artists.artist_name', "artists.artist_id = music.music_artist", "1=1 limit 6");
               while($music = mysqli_fetch_assoc($db->res)){
            ?>
             <!-- Single Top Item -->
@@ -245,7 +245,7 @@ $artists = $db->res;
                 </div>
                 <div class="content-">
                   <h6><?php echo $music['music_title'] ?></h6>
-                  <p><?php echo $music['music_artist']?></p>
+                  <p><?php echo $music['artist_name']?></p>
                 </div>
               </div>
             </div>
@@ -287,13 +287,13 @@ $artists = $db->res;
 
             <!-- Single Artist -->
             <?php 
-            // Selects Top 7 artists with most no. of music (in DB)
+            // Selects Top 6 artists with most no. of music (in DB)
             $db->selectJoin(
               'artists', 
               'music', 
               'artists.artist_name, artists.artist_photo', 
               'artists.artist_id = music.music_artist', 
-              '1=1 GROUP BY artists.artist_id, artists.artist_name ORDER BY count(*) DESC LIMIT 7'
+              '1=1 GROUP BY artists.artist_id, artists.artist_name ORDER BY count(*) DESC LIMIT 6'
             );
             while($row = mysqli_fetch_assoc($db->res)) {
             ?>
