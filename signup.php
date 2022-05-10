@@ -6,12 +6,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/flow/helpers/database.php';
 
 $db = new Database();
 if (isset($_POST['submit'])) {
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-  $db->insert('users', ['user_name' => $name, 'user_email' => $email, 'user_password' => $password]);
+  $data['user_name'] = $_POST['name'];
+  $data['user_email'] = $_POST['email'];
+  $data['user_password'] = $_POST['password'];
+
+  $db->insert('users', $data);
   if ($db->res) {
-    $_SESSION['user'] = $name; 
+    $db->select('users', '*', '`user_email` = "'.$data['user_email'].'"');
+    $user = mysqli_fetch_assoc($db->res);
+    $_SESSION['user'] = $user['user_name']; 
+    $_SESSION['user_id'] = $user['user_id']; 
     header('location:./login.php');
   }
 }

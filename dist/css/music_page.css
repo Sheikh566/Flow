@@ -1,0 +1,49 @@
+.ratingControl {
+  position: relative;
+  display: inline-flex;
+  direction: rtl;
+}
+.ratingControl__radio {
+  position: absolute;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+.ratingControl__star {
+  position: relative;
+  display: block;
+  height: 48px;
+  width: 24px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.ratingControl__star:nth-last-of-type(odd)::before, .ratingControl__star:nth-last-of-type(odd)::after {
+  left: 0;
+  clip-path: polygon(50% 0%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.ratingControl__star:nth-last-of-type(even)::before, .ratingControl__star:nth-last-of-type(even)::after {
+  right: 0;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%);
+}
+.ratingControl__star::before, .ratingControl__star::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+.ratingControl__star::before {
+  width: 200%;
+  background-color: #aaa;
+}
+.ratingControl__star::after {
+  background-color: #f2b600;
+}
+.ratingControl__star:hover::after, .ratingControl__star:hover ~ .ratingControl__star::after, .ratingControl__radio:checked ~ .ratingControl__star::after {
+  width: 200%;
+}
+.comment-box {
+  height: 100px;
+}
+textarea {
+  resize: none;
+}

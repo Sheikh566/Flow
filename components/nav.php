@@ -57,11 +57,13 @@ if (session_status() === PHP_SESSION_NONE) {
                                     if (!isset($_SESSION['user'])) {
                                         echo "<a href='http://" . $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . "/flow/login.php' id='loginBtn'>Login / Signup</a>";
                                     } else {
-                                       echo '<h6 class="text-white">Hi , ' .$_SESSION["user"] . '
-                                       <a href="http://'.$_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'].'/flow/helpers/logout.php?lastPage=' . $_SERVER['REQUEST_URI'] . '" class="btn btn-dark">
-                                           <span class="fa fa-sign-out"></span>Log out
-                                       </a>
-                                   </h6>';
+                                        echo 
+                                        '<h5 class="text-white">Hi, ' .$_SESSION["user"] . '
+                                          <a href="http://'.$_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'].'/flow/helpers/logout.php?lastPage=' . $_SERVER['REQUEST_URI'] . '">
+                                            <i class="fa fa-sign-out"></i>
+                                            <span>Signout</span>
+                                          </a>
+                                        </h5>';
                                     }
                                     ?>
                                    

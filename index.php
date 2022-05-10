@@ -34,6 +34,12 @@ $artists = $db->res;
     .album-thumb>img {
       border-radius: 5px;
     }
+
+    .thumbnail>img {
+      height: 73px;
+      width: 73px;
+      object-fit: cover;
+    }
   </style>
 </head>
 
@@ -109,7 +115,7 @@ $artists = $db->res;
       <div class="row">
         <div class="col-12">
           <div class="section-heading style-2">
-            <h2>Our Albums</h2>
+            <h2>New Albums</h2>
           </div>
         </div>
       </div>
@@ -158,7 +164,7 @@ $artists = $db->res;
             <div class="single-album-area wow fadeInUp" data-wow-delay="100ms">
               <div class="album-thumb">
                 <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['artist_photo']); ?>" alt="Artist Photo">
-               
+
               </div>
               <div class="album-info" style="text-align: center;">
                 <a href="sub-show/artist_page.php?id=<?php echo $row['artist_id']; ?>">
@@ -233,23 +239,23 @@ $artists = $db->res;
               <p>Worldwide</p>
               <h2>New Hits</h2>
             </div>
-           <?php 
-              $db->selectJoin('music','artists', 'music.*, artists.artist_name', "artists.artist_id = music.music_artist", "1=1 limit 6");
-              while($music = mysqli_fetch_assoc($db->res)){
-           ?>
-            <!-- Single Top Item -->
-            <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="100ms">
-              <div class="first-part d-flex align-items-center">
-                <div class="thumbnail">
-                  <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($music['music_thumbnail']); ?>" alt="">
-                </div>
-                <div class="content-">
-                  <h6><?php echo $music['music_title'] ?></h6>
-                  <p><?php echo $music['artist_name']?></p>
+            <?php
+            $db->selectJoin('music', 'artists', 'music.*, artists.artist_name', "artists.artist_id = music.music_artist", "1=1 limit 6");
+            while ($row = mysqli_fetch_assoc($db->res)) {
+            ?>
+              <!-- Single Top Item -->
+              <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="100ms">
+                <div class="first-part d-flex align-items-center">
+                  <div class="thumbnail">
+                    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['music_thumbnail']); ?>" alt="">
+                  </div>
+                  <div class="content-">
+                    <h6><?php echo $row['music_title'] ?></h6>
+                    <p><?php echo $row['artist_name'] ?></p>
+                  </div>
                 </div>
               </div>
-            </div>
-          
+
             <?php } ?>
           </div>
         </div>
@@ -262,17 +268,21 @@ $artists = $db->res;
               <h2>This week’s top</h2>
             </div>
 
-            <!-- Single Top Item -->
-            <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="100ms">
-              <div class="thumbnail">
-                <img src="dist/img/bg-img/wt1.jpg" alt="">
+            <?php
+            $db->selectJoin('albums', 'artists', 'albums.*, artists.artist_name', "artists.artist_id = albums.album_artist", "1=1 limit 6");
+            while ($row = mysqli_fetch_assoc($db->res)) {
+            ?>
+              <!-- Single Top Item -->
+              <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="100ms">
+                <div class="thumbnail">
+                <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['album_thumbnail']); ?>" alt="Album Thumbnail">
+                </div>
+                <div class="content-">
+                  <h6><?php echo $row['album_title'] ?></h6>
+                  <p><?php echo $row['artist_name'] ?></p>
+                </div>
               </div>
-              <div class="content-">
-                <h6>Sam Smith</h6>
-                <p>Underground</p>
-              </div>
-            </div>
-
+            <?php } ?>
 
           </div>
         </div>
@@ -286,16 +296,16 @@ $artists = $db->res;
             </div>
 
             <!-- Single Artist -->
-            <?php 
+            <?php
             // Selects Top 6 artists with most no. of music (in DB)
             $db->selectJoin(
-              'artists', 
-              'music', 
-              'artists.artist_name, artists.artist_photo', 
-              'artists.artist_id = music.music_artist', 
+              'artists',
+              'music',
+              'artists.artist_name, artists.artist_photo',
+              'artists.artist_id = music.music_artist',
               '1=1 GROUP BY artists.artist_id, artists.artist_name ORDER BY count(*) DESC LIMIT 6'
             );
-            while($row = mysqli_fetch_assoc($db->res)) {
+            while ($row = mysqli_fetch_assoc($db->res)) {
             ?>
               <div class="single-artists d-flex align-items-center wow fadeInUp" data-wow-delay="100ms">
                 <div class="thumbnail">
@@ -305,7 +315,7 @@ $artists = $db->res;
                   <p><?php echo $row['artist_name'] ?></p>
                 </div>
               </div>
-              <?php } ?>
+            <?php } ?>
           </div>
         </div>
       </div>

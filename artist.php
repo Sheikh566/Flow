@@ -48,6 +48,7 @@ $db = new Database();
                 min-width: 150px;
             }
         }
+
     </style>
 </head>
 
