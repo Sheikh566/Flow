@@ -130,7 +130,7 @@ $artists = $db->res;
               <div class="single-album">
                 <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['album_thumbnail']); ?>" alt="Album Thumbnail">
                 <div class="album-info">
-                  <a href="#">
+                  <a href="sub-show/album_page.php?id=<?php echo $row['album_id'] ?>">
                     <h5><?php echo $row['album_title'] ?></h5>
                   </a>
                   <p><?php echo $row['artist_name'] ?></p>

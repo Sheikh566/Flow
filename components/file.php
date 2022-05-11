@@ -12,7 +12,7 @@
     <title>Flow - Stream Music Anywhere</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/img/core-img/favicon.ico">
+    <link rel="icon" href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/img/core-img/flow.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']?>/flow/dist/css/style.css">
