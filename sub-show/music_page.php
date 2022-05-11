@@ -18,7 +18,7 @@ if (!isset($_SESSION['user'])) {
 
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
-  $db->selectJoin('music', 'artists', 'music.*, artists.artist_name', "artists.artist_id = music.music_artist", "music_id = $id");
+  $db->selectJoin('music', 'artists', 'music.*, artists.artist_id, artists.artist_name', "artists.artist_id = music.music_artist", "music_id = $id");
   $music = mysqli_fetch_assoc($db->res);
 }
 
@@ -33,96 +33,25 @@ if (isset($_GET['id'])) {
   <link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/dist/css/music_page.css">
 
   <style>
-    :root {
-      background: rgb(2, 0, 36);
-
-      overflow: hidden;
-
-    }
-
     .bg-image {
-      /* The image used */
-      background-image: url("data:image/jpg;charset=utf8;base64,<?php echo base64_encode($music['music_thumbnail']); ?>");
-      position: absolute;
-      width: 110%;
+  /* The image used */
+  background-image: url("data:image/jpg;charset=utf8;base64,<?php echo base64_encode($music['music_thumbnail']); ?>");
+  position: absolute;
+  width: 110%;
+  transform: translateX(-80px);
 
-      /* Add the blur effect */
-      filter: blur(8px);
-      -webkit-filter: blur(50px);
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(50px);
 
-      /* Full height */
-      height: 110%;
+  /* Full height */
+  height: 110%;
 
-      /* Center and scale the image nicely */
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-
-    .container {
-      font-family: 'Quicksand', sans-serif;
-    }
-
-    .music-player {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #ffffff12;
-      width: 70%;
-      height: 340px;
-      border-radius: 15px;
-      padding-left: 40px;
-      box-shadow: 0px 17px 118px 7px rgb(0 0 0 / 40%);
-      display: flex;
-      align-items: center;
-
-    }
-
-    .music-player::before {
-      box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
-      filter: blur(10px);
-    }
-
-    #music-icon {
-      height: 160px;
-      width: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .info {
-      margin-left: 40px;
-      width: 100%;
-      box-shadow: -3px -1px 81px -2px;
-      padding: 40px;
-      background: white;
-      border-radius: 10px;
-    }
-
-    .info h3 {
-      margin-bottom: 10px;
-    }
-
-    .music-player img {
-      margin-top: 8px;
-    }
-
-    div.classy-nav-container {
-      background-color: black !important;
-    }
-
-    .audioplayer {
-      border: none;
-    }
-
-    .review i {
-      color: #444;
-    }
-
-    .modal-backdrop {
-      z-index: -1;
-    }
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
   </style>
 </head>
 
@@ -136,9 +65,11 @@ if (isset($_GET['id'])) {
       <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($music['music_thumbnail']); ?>" alt="music-icon" id="music-icon">
       <div class="info">
         <h1><?php echo $music['music_title']; ?></h1>
-        <h3><?php echo $music['artist_name']; ?></h3>
+        <h3>
+          <a href="./artist_page.php?id=<?php echo $music['artist_id'] ?>"><?php echo $music['artist_name']; ?></a>
+      </h3>
         <audio controls>
-          <source src="../<?php echo $music['music_path']; ?>">
+          <source src="http://localhost/flow<?php echo $music['music_path']; ?>">
         </audio>
         <a href="#" class="d-flex justify-content-between mx-4 review" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
           <div class="fs-6 mt-2">

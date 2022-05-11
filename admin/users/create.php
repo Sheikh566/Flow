@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
               <form method="POST">
                 <div class="mb-3">
                   <label for="name" class="form-label">Name</label>
-                  <input type="name" class="form-control"  id="exampleInputEmail1" name="name" aria-describedby="emailHelp">
+                  <input type="name" class="form-control"   name="name" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Email address</label>

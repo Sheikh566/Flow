@@ -140,7 +140,8 @@ $db = new Database();
           <h2><?php echo $row['music_title'] ?></h2>
           <p><?php echo $row['artist_name'] ?></p>
           <a href="../sub-show/music_page.php?id=<?php echo $row['music_id'] ?>">
-            <button class="btn">Play</button></a>
+            <button class="btn">Play</button>
+          </a>
         </div>
       <?php } ?>
     </div>
@@ -160,7 +161,9 @@ $db = new Database();
           <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['music_thumbnail']); ?>" alt="Music Thumbnail" style="object-fit: cover">
           <h2><?php echo $row['music_title'] ?></h2>
           <p><?php echo $row['artist_name'] ?></p>
-          <a href="../sub-show/music_page.php?id=<?php echo $row['music_id'] ?>"><button class="btn">View</button></a>
+          <a href="../sub-show/music_page.php?id=<?php echo $row['music_id'] ?>">
+            <button class="btn">Play</button>
+          </a>
         </div>
       <?php } ?>
 

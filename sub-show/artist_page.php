@@ -63,12 +63,12 @@ if (isset($_GET['id'])) {
                                 <div class="single-cool-fact mt-15 mb-30">
                                     <div class="scf-text">
                                         <h2><span class="counter">25</span>mil</h2>
-                                        <p>Songs in Playlist</p>
+                                        <p>Listeners</p>
                                     </div>
                                 </div>
                                 <div class="single-cool-fact mb-30">
                                     <div class="scf-text">
-                                        <h2><span class="counter">2401</span></h2>
+                                        <h2><span class="counter"><?php echo mysqli_num_rows($music) ?></span></h2>
                                         <p>New Songs</p>
                                     </div>
                                 </div>
@@ -108,15 +108,15 @@ if (isset($_GET['id'])) {
                     <div class="albums-slideshow owl-carousel">
 
                         <?php while ($row = mysqli_fetch_assoc($music)) { ?>
-                            <div class="single-album">
+                            <a href="music_page.php?id=<?php echo $row['music_id'] ?>" class="single-album">
                                 <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['music_thumbnail']); ?>" alt="Music Photo" style="object-fit: cover; " />
                                 <div class="album-info">
-                                    <a href="music_page.php?id=<?php echo $row['music_id'] ?>">
+
                                         <h5 class="text-dark"><?php echo $row['music_title'] ?></h5>
-                                    </a>
+
                                     <p><?php echo $row['music_year'] ?></p>
                                 </div>
-                            </div>
+                        </a>
                         <?php } ?>
                     </div>
                 </section>
