@@ -131,7 +131,7 @@ $db = new Database();
     <hr>
     <div class="card-container d-flex justify-content-center">
       <?php
-      $db->selectJoin('music', 'artists', 'music.*, artists.artist_name', "artists.artist_id = music.music_artist", "music.music_language = 'REGIONAL'");
+      $db->selectJoin('music', 'artists', 'music.*, artists.artist_name', "artists.artist_id = music.music_artist", "music.music_language = 'REGIONAL' AND music.music_format = 'AUDIO'");
 
       while ($row = mysqli_fetch_assoc($db->res)) {
       ?>
@@ -153,7 +153,7 @@ $db = new Database();
     <hr>
     <div class="card-container d-flex justify-content-center">
       <?php
-      $db->selectJoin('music', 'artists', 'music.*, artists.artist_name', "artists.artist_id = music.music_artist", "music.music_language = 'ENGLISH'");
+      $db->selectJoin('music', 'artists', 'music.*, artists.artist_name', "artists.artist_id = music.music_artist", "music.music_language = 'ENGLISH' AND music.music_format = 'AUDIO'");
 
       while ($row = mysqli_fetch_assoc($db->res)) {
       ?>

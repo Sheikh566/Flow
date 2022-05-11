@@ -11,7 +11,8 @@ if (isset($_POST['rating'])) {
   $review['review_message'] = $_POST['message'];
   $review['music_id'] = $_POST['music_id'];
   $review['user_id'] = $_POST['user_id'];
-
+  $review['review_datetime'] =$_POST['datetime'];
+  
   $db->select('reviews', 'review_id', "`music_id` = ". $review['music_id']. " AND `user_id` = ". $review['user_id'] );
 
   if (mysqli_num_rows($db->res) > 0) {

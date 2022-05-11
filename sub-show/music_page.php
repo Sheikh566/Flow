@@ -91,6 +91,7 @@ if (isset($_GET['id'])) {
             <form id="review">
               <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?>">
               <input type="hidden" name="music_id" value="<?php echo $_GET['id'] ?>">
+              <input type="hidden" name="datetime" value="<?php echo date('Y-m-d H:i:s') ?>">
 
               
               <div class="modal-content">
