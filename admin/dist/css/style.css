@@ -14818,3 +14818,7 @@ File: scss
 @media (max-width: 991.98px) {
   .do-block {
     display: block !important; } }
+
+    form input, textarea, select, option {
+      font-family: var(--font-family-sans-serif) !important;
+    }

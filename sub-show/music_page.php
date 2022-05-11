@@ -91,6 +91,8 @@ if (isset($_GET['id'])) {
             <form id="review">
               <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?>">
               <input type="hidden" name="music_id" value="<?php echo $_GET['id'] ?>">
+
+              
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="staticBackdropLabel">Write a review</h5>
@@ -144,10 +146,6 @@ if (isset($_GET['id'])) {
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/flow/components/scripts_file.php' ?>
   <script>
     $(document).ready(function() {
-
-
-
-
       $('#review').submit(function(e) {
         event.preventDefault();
 

@@ -50,3 +50,8 @@ form input, textarea {
     font-family: "Archivo Narrow";
     font-size: 20px !important;
 }
+
+.rounded-circle {
+  border-radius: 17px!important;
+  width: -webkit-fill-available;
+}

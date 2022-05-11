@@ -10,7 +10,7 @@ $db->selectJoin(
   'music',
   'artists.*, count(music.music_id) as total_tracks',
   'music.music_artist = artists.artist_id',
-  "1=1 GROUP BY artists.artist_id",
+  "1=1 GROUP BY artists.artist_id ORDER BY total_tracks DESC LIMIT 12",
   "LEFT"
 );
 $artists = $db->res;
@@ -33,6 +33,7 @@ $artists = $db->res;
 
     .album-thumb>img {
       border-radius: 5px;
+      width: 290px;
     }
 
     .thumbnail>img {

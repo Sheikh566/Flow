@@ -31,6 +31,7 @@
                                                 <th scope="col">Message</th>
                                                 <th scope="col">Music</th>
                                                 <th scope="col">User</th>
+                                                <th scope="col">Time</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -43,6 +44,7 @@
                                                 <td><?php echo $row['review_message'] ?></td>
                                                 <td><?php echo $row['music_id'] ?></td>
                                                 <td><?php echo $row['user_id'] ?></td>
+                                                <td><?php echo $row['review_datetime'] ?></td>
                                             </tr>
                                           <?php } ?>
                                         </tbody>
