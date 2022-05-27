@@ -103,20 +103,20 @@ if (isset($_GET['id'])) {
                     </div>
                 </section>
 
-                <h3 class="text-center mb-4">L A T E S T &nbsp; M U S I C</h3>
+                <h3 class="text-center my-3">MUSIC &nbsp; LIST</h3>
                 <section class="latest-albums-area" data-aos="fade-up" data-aos-duration="3000">
                     <div class="albums-slideshow owl-carousel">
 
                         <?php while ($row = mysqli_fetch_assoc($music)) { ?>
-                            <a href="music_page.php?id=<?php echo $row['music_id'] ?>" class="single-album">
-                                <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['music_thumbnail']); ?>" alt="Music Photo" style="object-fit: cover; " />
+                            <div class="single-album">
+                                <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['music_thumbnail']); ?>" alt="Album Photo" style="object-fit: cover; " />
                                 <div class="album-info">
-
+                                    <a href="music_page.php?id=<?php echo $row['music_id'] ?>">
                                         <h5 class="text-dark"><?php echo $row['music_title'] ?></h5>
-
+                                    </a>
                                     <p><?php echo $row['music_year'] ?></p>
                                 </div>
-                        </a>
+                            </div>
                         <?php } ?>
                     </div>
                 </section>

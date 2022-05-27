@@ -43,7 +43,10 @@ $db = new Database();
 
 
     #special .card-container .card img {
-      height: 180px;
+      width: 100%;
+    height: 10rem; 
+    object-fit: fill;
+
     }
 
     #special .card-container .card p {
@@ -123,7 +126,7 @@ $db = new Database();
   <!-- ##### Breadcumb Area Start ##### -->
   <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(../dist/img/bg-img/simmon.jpg);">
     <div class="bradcumbContent">
-      <h2>Audio Songs</h2>
+      <h2>All Songs</h2>
     </div>
   </section>
   <section id="special" class="container-fluid ">
@@ -132,13 +135,16 @@ $db = new Database();
     <div class="card-container d-flex justify-content-center">
       <?php
       $db->selectJoin('music', 'artists', 'music.*, artists.artist_name', "artists.artist_id = music.music_artist", "music.music_language = 'REGIONAL' AND music.music_format = 'AUDIO'");
-
+    
       while ($row = mysqli_fetch_assoc($db->res)) {
       ?>
         <div class="card">
-          <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['music_thumbnail']); ?>" alt="Music Thumbnail" style="object-fit: cover">
-          <h2><?php echo $row['music_title'] ?></h2>
+          <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['music_thumbnail']); ?>" alt="Music Thumbnail">
+          <h2 class="mt-4"><?php echo $row['music_title'] ?></h2>
           <p><?php echo $row['artist_name'] ?></p>
+          <!-- <div class="text-center">
+                  <span class="badge bg-light text-muted">Rating: <?php echo number_format(round($row['rating'], 2), 2) ?></span>
+                </div> -->
           <a href="../sub-show/music_page.php?id=<?php echo $row['music_id'] ?>">
             <button class="btn">Play</button>
           </a>
@@ -158,9 +164,10 @@ $db = new Database();
       while ($row = mysqli_fetch_assoc($db->res)) {
       ?>
         <div class="card">
-          <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['music_thumbnail']); ?>" alt="Music Thumbnail" style="object-fit: cover">
-          <h2><?php echo $row['music_title'] ?></h2>
+          <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['music_thumbnail']); ?>" alt="Music Thumbnail">
+          <h2 class="mt-4"><?php echo $row['music_title'] ?></h2>
           <p><?php echo $row['artist_name'] ?></p>
+         
           <a href="../sub-show/music_page.php?id=<?php echo $row['music_id'] ?>">
             <button class="btn">Play</button>
           </a>
