@@ -44,9 +44,9 @@ if (session_status() === PHP_SESSION_NONE) {
                                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/albums.php">Albums</a></li>
                                 <li><a href="#">Music</a>
                                 <ul class="dropdown">
-                                <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/music/music.php">Audio</a></li>
-                                <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/music/video.php">Video</a></li>
-                                </ul>               
+                                  <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/music/music.php">Audio</a></li>
+                                  <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/music/video.php">Video</a></li>
+                                </ul >               
                                 </li>
                                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/artists.php">Artists</a></li>
                                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/browse.php">Browse</a></li>
@@ -71,7 +71,6 @@ if (session_status() === PHP_SESSION_NONE) {
                                         </h5>';
                                     }
                                     ?>
-                                   
                                 </div>
                             </div>
                         </div>

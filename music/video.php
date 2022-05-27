@@ -63,7 +63,7 @@ $db = new Database();
         $db->selectJoin('music', 'artists', 'music.*, artists.artist_name , artists.artist_photo', "artists.artist_id = music.music_artist", "music.music_format = 'Video'");
         while ($video_music = mysqli_fetch_assoc($db->res)) {
         ?>
-          <div class="col-md-4 video-box">
+          <div class="col-md-4 video-box ms-3">
             <div class="card border-0">
               <video id="my_video_1" class="video-js vjs-default-skin" width="680px" height="400px" controls preload="none" poster='data:image/jpg;charset=utf8;base64,<?php echo base64_encode($video_music['music_thumbnail']); ?>' data-setup='{ "aspectRatio":"680:400"}'>
                 <source src="../<?php echo $video_music['music_path'] ?>" type='video/mp4' />

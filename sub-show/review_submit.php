@@ -12,7 +12,6 @@ if (isset($_POST['rating'])) {
   $review['music_id'] = $_POST['music_id'];
   $review['user_id'] = $_POST['user_id'];
   $review['review_datetime'] =$_POST['datetime'];
-  
   $db->select('reviews', 'review_id', "`music_id` = ". $review['music_id']. " AND `user_id` = ". $review['user_id'] );
 
   if (mysqli_num_rows($db->res) > 0) {
@@ -22,12 +21,11 @@ if (isset($_POST['rating'])) {
       $review[$col] = '"'.$val.'"';
     }
     $db->update('reviews', $review, "review_id = $review_id");
-
   } else {
-  $db->insert('reviews', $review);
-  if ($db->res) {
-    echo "Sucessfully added review";
-  }
+    $db->insert('reviews', $review);
+    if ($db->res) {
+      echo "Sucessfully added review";
+    }
 }
 }
 

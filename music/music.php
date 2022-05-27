@@ -123,7 +123,7 @@ $db = new Database();
   <!-- ##### Breadcumb Area Start ##### -->
   <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(../dist/img/bg-img/simmon.jpg);">
     <div class="bradcumbContent">
-      <h2>All Songs</h2>
+      <h2>Audio Songs</h2>
     </div>
   </section>
   <section id="special" class="container-fluid ">

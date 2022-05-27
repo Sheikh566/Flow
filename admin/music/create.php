@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
   $year = $_POST['year'];
   $language = $_POST['language'];
   $format = $_POST['format'];
-  $fileName = $_FILES['music_file']['name'];
+  $fileName = str_replace(' ', '-', $_FILES['music_file']['name']);
   $fileTmp = $_FILES['music_file']['tmp_name'];
   $path = '/uploads/'.strtolower($format)."/".$fileName;
   $thumbnail = addslashes(file_get_contents($_FILES['thumbnail']['tmp_name']));

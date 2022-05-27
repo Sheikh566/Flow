@@ -132,7 +132,7 @@ if (isset($_GET['id'])) {
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-outlined-dark" data-bs-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-warning">Send</button>
+                  <button type="submit" class="btn btn-warning">Post</button>
                 </div>
             </form>
           </div>
@@ -149,7 +149,7 @@ if (isset($_GET['id'])) {
     $(document).ready(function() {
       $('#review').submit(function(e) {
         event.preventDefault();
-
+        
         let myUrl = 'http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] ?>/flow/sub-show/review_submit.php';
         let form = $(this);
         let serializedData = $(this).serialize();

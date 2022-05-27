@@ -267,10 +267,10 @@ $db = new Database();
               <h4 class="card-title">Temp Guide</h4>
               <div class="d-flex align-items-center flex-row m-t-30">
                 <div class="display-5 text-info"><i class="wi wi-day-showers"></i>
-                  <span>73<sup>°</sup></span>
+                  <span>30<sup>°</sup></span>
                 </div>
                 <div class="m-l-10">
-                  <h3 class="m-b-0">Saturday</h3><small>Ahmedabad, India</small>
+                  <h3 class="m-b-0">Friday</h3><small>Karachi, Pakistam</small>
                 </div>
               </div>
               <table class="table no-border mini-table m-t-20">
@@ -297,22 +297,22 @@ $db = new Database();
                 <li class="col-3">
                   <h4 class="text-info"><i class="wi wi-day-sunny"></i></h4>
                   <span class="d-block text-muted">09:30</span>
-                  <h3 class="m-t-5">70<sup>°</sup></h3>
+                  <h3 class="m-t-5">29<sup>°</sup></h3>
                 </li>
                 <li class="col-3">
                   <h4 class="text-info"><i class="wi wi-day-cloudy"></i></h4>
                   <span class="d-block text-muted">11:30</span>
-                  <h3 class="m-t-5">72<sup>°</sup></h3>
+                  <h3 class="m-t-5">32<sup>°</sup></h3>
                 </li>
                 <li class="col-3">
                   <h4 class="text-info"><i class="wi wi-day-hail"></i></h4>
                   <span class="d-block text-muted">13:30</span>
-                  <h3 class="m-t-5">75<sup>°</sup></h3>
+                  <h3 class="m-t-5">36<sup>°</sup></h3>
                 </li>
                 <li class="col-3">
                   <h4 class="text-info"><i class="wi wi-day-sprinkle"></i></h4>
                   <span class="d-block text-muted">15:30</span>
-                  <h3 class="m-t-5">76<sup>°</sup></h3>
+                  <h3 class="m-t-5">34<sup>°</sup></h3>
                 </li>
               </ul>
             </div>

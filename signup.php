@@ -9,14 +9,19 @@ if (isset($_POST['submit'])) {
   $data['user_name'] = $_POST['name'];
   $data['user_email'] = $_POST['email'];
   $data['user_password'] = $_POST['password'];
-
-  $db->insert('users', $data);
-  if ($db->res) {
-    $db->select('users', '*', '`user_email` = "'.$data['user_email'].'"');
-    $user = mysqli_fetch_assoc($db->res);
-    $_SESSION['user'] = $user['user_name']; 
-    $_SESSION['user_id'] = $user['user_id']; 
-    header('location:./login.php');
+  $db->select('users', 'user_email', '`user_email` = "'.$data['user_email'].'"' );
+  if (mysqli_num_rows($db->res) > 0) {
+    Helper::alert("Email already registered. You can Log in.");
+  }
+   else {
+     $db->insert('users', $data);
+     if ($db->res) {
+      $db->select('users', '*', '`user_email` = "'.$data['user_email'].'"');
+      $user = mysqli_fetch_assoc($db->res);
+      $_SESSION['user'] = $user['user_name']; 
+      $_SESSION['user_id'] = $user['user_id']; 
+      header('location:./login.php');
+    }
   }
 }
 ?>
@@ -62,7 +67,15 @@ if (isset($_POST['submit'])) {
                             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                                 <div class="form-group">
                                     <label for="name">Name</label>
-                                    <input type="text" class="form-control" name="name" maxlength="50" required>
+                                    <input 
+                                      type="text" 
+                                      class="form-control" 
+                                      name="name" 
+                                      pattern="[a-zA-Z][a-zA-Z ]{2,}" 
+                                      title="Invalid characters in Name field" 
+                                      maxlength="50" 
+                                      required
+                                    >
                                     <!-- <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small> -->
                                 </div>
                                 <div class="form-group">
